@@ -13,6 +13,14 @@
       <br />
       <input type="submit" value="Search" />
     </form>
+    <div v-for="place in nearby_places" :key="place.id">
+      <ul style="list-style: none">
+        <li>Name: {{ place.name }}</li>
+        <li>Rating: {{ place.rating }}</li>
+        <li>Number of Ratings: {{ place.user_ratings_total }}</li>
+        <li>Address: {{ place.address }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -24,7 +32,6 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Welcome to Vue.js!",
       nearby_places: {},
       place: {},
       address: "",
@@ -46,7 +53,7 @@ export default {
         .get("/api/places/nearby_search", { params })
         .then((response) => {
           console.log(params);
-          console.log("nearby search", response);
+          console.log("nearby search", response.data);
           this.nearby_places = response.data;
         })
         .catch((error) => {
