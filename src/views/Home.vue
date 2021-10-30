@@ -18,21 +18,13 @@
       <br />
     </form>
     <div v-for="(place, i) in nearby_places" :key="i">
-      <button v-on:click="selectedPlaceId(i)" style="list-style: none">
+      <button v-on:click="showPlaceDetails(i)" style="list-style: none">
         <li>Name: {{ place.name }}</li>
         <li>Rating: {{ place.rating }}</li>
         <li>Number of Ratings: {{ place.user_ratings_total }}</li>
         <li>Address: {{ place.address }}</li>
-        <li>Place Id: {{ place.place_id }}</li>
       </button>
-      <hr />
     </div>
-    <form v-on:submit.prevent="showPlaceDetails()">
-      <hr />
-      <input type="text" placeholder="nothing here yet" v-model="place_id" />
-      <br />
-      <input type="submit" value="Show Me The Details" />
-    </form>
     <div>
       <ul style="list-style: none">
         <a v-bind:href="place.website">{{ place.name }}</a>
@@ -104,7 +96,9 @@ export default {
           console.log(error.messages);
         });
     },
-    showPlaceDetails: function () {
+    showPlaceDetails: function (i) {
+      this.place_id = this.nearby_places[i].place_id;
+      console.log("here is place_id", this.place_id);
       var params = {
         place_id: this.place_id,
       };
@@ -118,10 +112,6 @@ export default {
         .catch((error) => {
           console.log(error.messages);
         });
-    },
-    selectedPlaceId: function (i) {
-      this.place_id = this.nearby_places[i].place_id;
-      console.log("here is place_id", this.place_id);
     },
   },
 };
