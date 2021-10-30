@@ -4,14 +4,18 @@
     <form v-on:submit.prevent="nearbySearch()">
       Enter Address:
       <input type="text" v-model="address" />
-      <br />
+      <hr />
       Enter Keyword:
       <input type="text" v-model="keyword" />
-      <br />
+      <hr />
       Enter Type:
       <input type="text" v-model="type" />
-      <br />
+      <hr />
       <input type="submit" value="Search" />
+      <br />
+      <br />
+      <br />
+      <br />
     </form>
     <div v-for="place in nearby_places" :key="place.id">
       <ul style="list-style: none">
@@ -19,7 +23,18 @@
         <li>Rating: {{ place.rating }}</li>
         <li>Number of Ratings: {{ place.user_ratings_total }}</li>
         <li>Address: {{ place.address }}</li>
+        <li>Place Id: {{ place.place_id }}</li>
       </ul>
+      <hr />
+    </div>
+    <form v-on:submit.prevent="showPlaceDetails()">
+      <hr />
+      <input type="text" v-model="place_id" />
+      <br />
+      <input type="submit" value="Show Me The Details" />
+    </form>
+    <div>
+      <h5>Details: {{ place }}</h5>
     </div>
   </div>
 </template>
@@ -37,6 +52,7 @@ export default {
       address: "",
       keyword: "",
       type: "",
+      place_id: "",
     };
   },
   created: function () {
@@ -55,6 +71,21 @@ export default {
           console.log(params);
           console.log("nearby search", response.data);
           this.nearby_places = response.data;
+        })
+        .catch((error) => {
+          console.log(error.messages);
+        });
+    },
+    showPlaceDetails: function () {
+      var params = {
+        place_id: this.place_id,
+      };
+      axios
+        .get("/api/places/place_details", { params })
+        .then((response) => {
+          console.log(params);
+          console.log("showing place details", response);
+          this.place = response.data;
         })
         .catch((error) => {
           console.log(error.messages);
