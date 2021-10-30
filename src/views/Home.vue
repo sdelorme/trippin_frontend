@@ -34,7 +34,35 @@
       <input type="submit" value="Show Me The Details" />
     </form>
     <div>
-      <h5>Details: {{ place }}</h5>
+      <ul style="list-style: none">
+        <a v-bind:href="place.website">{{ place.name }}</a>
+        <br />
+        {{
+          place.phone_number
+        }}
+        <br />
+        {{
+          place.address
+        }}
+        <hr />
+        <div v-for="item in place.hours" :key="item">
+          {{ item }}
+        </div>
+        <hr />
+        Rating:
+        {{
+          place.rating
+        }}
+        <br />
+        Total Ratings:
+        {{
+          place.user_ratings_total
+        }}
+        <br />
+        <a v-bind:href="place.google_url">See More Information Here</a>
+
+        <br />
+      </ul>
     </div>
   </div>
 </template>
