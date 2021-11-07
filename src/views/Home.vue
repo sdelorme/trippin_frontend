@@ -27,7 +27,7 @@
     </div>
     <div>
       <ul style="list-style: none">
-        <a v-bind:href="place.website">{{ place.name }}</a>
+        <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
         <br />
         {{
           place.phone_number
@@ -51,7 +51,7 @@
           place.user_ratings_total
         }}
         <br />
-        <a v-bind:href="place.google_url">See More Information Here</a>
+        <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">See More Information Here</a>
 
         <br />
       </ul>
