@@ -13,9 +13,6 @@
       <hr />
       <input type="submit" value="Search" />
       <br />
-      <br />
-      <br />
-      <br />
     </form>
     <div v-for="(place, i) in nearby_places" :key="i">
       <button v-on:click="showPlaceDetails(i)" style="list-style: none">
@@ -24,6 +21,9 @@
         <li>Number of Ratings: {{ place.user_ratings_total }}</li>
         <li>Address: {{ place.address }}</li>
       </button>
+    </div>
+    <div id="next_page">
+      <button v-on:click="nearbySearchNextPage()">Next Page</button>
     </div>
     <div>
       <ul style="list-style: none">
@@ -36,11 +36,9 @@
         {{
           place.address
         }}
-        <hr />
         <div v-for="item in place.hours" :key="item">
           {{ item }}
         </div>
-        <hr />
         Rating:
         {{
           place.rating
@@ -73,6 +71,7 @@ export default {
       keyword: "",
       type: "",
       place_id: "",
+      next_page_token: "",
     };
   },
   created: function () {
@@ -84,13 +83,32 @@ export default {
         address: this.address,
         keyword: this.keyword,
         type: this.type,
+        next_page_token: this.next_page_token,
       };
       axios
         .get("/api/places/nearby_search", { params })
         .then((response) => {
           console.log(params);
+          console.log("next_page_token", response.data[0]["next_page_token"]);
           console.log("nearby search", response.data);
           this.nearby_places = response.data;
+          this.next_page_token = response.data[0]["next_page_token"];
+        })
+        .catch((error) => {
+          console.log(error.messages);
+        });
+    },
+    nearbySearchNextPage: function () {
+      var params = {
+        next_page_token: this.next_page_token,
+      };
+      axios
+        .get("/api/places/nearby_search/next_page", { params })
+        .then((response) => {
+          console.log("next_page_token", params);
+          console.log("next results", response.data);
+          this.nearby_places = response.data;
+          this.next_page_token = response.data[0]["next_page_token"];
         })
         .catch((error) => {
           console.log(error.messages);
