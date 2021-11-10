@@ -23,13 +23,13 @@
       </button>
     </div>
     <div id="next_page">
-      <button v-on:click="nearbySearchNextPage()" type="button">Next Page</button>
+      <button v-if="search_status == true" v-on:click="nearbySearchNextPage()" type="button">Next Page</button>
     </div>
     <div id="previous_page">
-      <button v-on:click="nearbySearch()" type="button">Previous Page</button>
+      <button v-if="search_status == true" v-on:click="nearbySearch()" type="button">Previous Page</button>
     </div>
     <div>
-      <ul style="list-style: none">
+      <ul v-if="place_id.length > 0" style="list-style: none">
         <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
         <br />
         {{
@@ -75,6 +75,7 @@ export default {
       type: "",
       place_id: "",
       next_page_token: "",
+      search_status: false,
     };
   },
   created: function () {
@@ -96,6 +97,8 @@ export default {
           console.log("nearby search", response.data);
           this.nearby_places = response.data;
           this.next_page_token = response.data[0]["next_page_token"];
+          this.search_status = true;
+          console.log("search_status", this.search_status);
         })
         .catch((error) => {
           console.log(error.messages);
