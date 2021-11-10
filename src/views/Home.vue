@@ -23,7 +23,10 @@
       </button>
     </div>
     <div id="next_page">
-      <button v-on:click="nearbySearchNextPage()">Next Page</button>
+      <button v-on:click="nearbySearchNextPage()" type="button">Next Page</button>
+    </div>
+    <div id="previous_page">
+      <button v-on:click="nearbySearch()" type="button">Previous Page</button>
     </div>
     <div>
       <ul style="list-style: none">
