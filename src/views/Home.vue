@@ -16,6 +16,7 @@
     </form>
     <div v-for="(place, i) in nearby_places" :key="i">
       <button v-on:click="showPlaceDetails(i)" style="list-style: none">
+        <li>Should be picture here</li>
         <li>Name: {{ place.name }}</li>
         <li>Rating: {{ place.rating }}</li>
         <li>Number of Ratings: {{ place.user_ratings_total }}</li>
@@ -30,6 +31,9 @@
     </div>
     <div>
       <ul v-if="place_id.length > 0" style="list-style: none">
+        <img
+          v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo_reference}&key=`"INSERT API KEY
+        />
         <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
         <br />
         {{
@@ -71,6 +75,7 @@ export default {
       nearby_places: {},
       place: {},
       address: "",
+      photo_reference: "",
       keyword: "",
       type: "",
       place_id: "",
@@ -95,10 +100,11 @@ export default {
           console.log(params);
           console.log("next_page_token", response.data[0]["next_page_token"]);
           console.log("nearby search", response.data);
-          this.nearby_places = response.data;
-          this.next_page_token = response.data[0]["next_page_token"];
           this.search_status = true;
           console.log("search_status", this.search_status);
+          this.nearby_places = response.data;
+          this.next_page_token = response.data[0]["next_page_token"];
+          // this.photo_reference = response.data[0]["results"]["photos"][0]["photo_reference"];
         })
         .catch((error) => {
           console.log(error.messages);
@@ -122,9 +128,12 @@ export default {
     },
     showPlaceDetails: function (i) {
       this.place_id = this.nearby_places[i].place_id;
+      this.photo_reference = this.nearby_places[i].photos[0]["photo_reference"];
       console.log("here is place_id", this.place_id);
+      console.log("here is photo reference", this.photo_reference);
       var params = {
         place_id: this.place_id,
+        photo_reference: this.photo_reference,
       };
       axios
         .get("/api/places/place_details", { params })
