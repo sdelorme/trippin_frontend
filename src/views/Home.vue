@@ -32,7 +32,7 @@
     <div>
       <ul v-if="place_id.length > 0" style="list-style: none">
         <img
-          v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo_reference}&key=`"INSERT API KEY
+          v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photo_reference=${photo_reference}&key=${api_key}`"
         />
         <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
         <br />
@@ -81,6 +81,7 @@ export default {
       place_id: "",
       next_page_token: "",
       search_status: false,
+      api_key: process.env.VUE_APP_MY_API_KEY,
     };
   },
   created: function () {
@@ -104,7 +105,6 @@ export default {
           console.log("search_status", this.search_status);
           this.nearby_places = response.data;
           this.next_page_token = response.data[0]["next_page_token"];
-          // this.photo_reference = response.data[0]["results"]["photos"][0]["photo_reference"];
         })
         .catch((error) => {
           console.log(error.messages);
