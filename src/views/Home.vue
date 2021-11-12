@@ -24,10 +24,12 @@
       </button>
     </div>
     <div id="next_page">
-      <button v-if="search_status == true" v-on:click="nearbySearchNextPage()" type="button">Next Page</button>
+      <button v-if="search_status == true && next_page_token" v-on:click="nearbySearchNextPage()" type="button">
+        Next Page
+      </button>
     </div>
     <div id="previous_page">
-      <button v-if="search_status == true" v-on:click="nearbySearch()" type="button">Previous Page</button>
+      <button v-if="need_previous_page == true" v-on:click="nearbySearch()" type="button">Previous Page</button>
     </div>
     <div>
       <ul v-if="place_id.length > 0" style="list-style: none">
@@ -81,6 +83,7 @@ export default {
       place_id: "",
       next_page_token: "",
       search_status: false,
+      need_previous_page: false,
       api_key: process.env.VUE_APP_MY_API_KEY,
     };
   },
@@ -121,6 +124,7 @@ export default {
           console.log("next results", response.data);
           this.nearby_places = response.data;
           this.next_page_token = response.data[0]["next_page_token"];
+          this.need_previous_page = true;
         })
         .catch((error) => {
           console.log(error.messages);
