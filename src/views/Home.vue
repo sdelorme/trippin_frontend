@@ -8,12 +8,15 @@
       Enter Keyword:
       <input type="text" v-model="keyword" />
       <hr />
-      Enter Type:
+      Enter Type: Change this to dropdown when bootstrap is done
       <input type="text" v-model="type" />
       <hr />
       <input type="submit" value="Search" />
       <br />
     </form>
+    <div>
+      <p>{{ message }}</p>
+    </div>
     <div v-for="(place, i) in nearby_places" :key="i">
       <button v-on:click="showPlaceDetails(i)" style="list-style: none">
         <li>Should be picture here</li>
@@ -82,6 +85,7 @@ export default {
       type: "",
       place_id: "",
       next_page_token: "",
+      message: "",
       search_status: false,
       need_previous_page: false,
       api_key: process.env.VUE_APP_MY_API_KEY,
@@ -94,20 +98,24 @@ export default {
     nearbySearch: function () {
       var params = {
         address: this.address,
-        keyword: this.keyword,
+        keyword: encodeURIComponent(this.keyword),
         type: this.type,
         next_page_token: this.next_page_token,
       };
       axios
         .get("/api/places/nearby_search", { params })
         .then((response) => {
-          console.log(params);
-          console.log("next_page_token", response.data[0]["next_page_token"]);
-          console.log("nearby search", response.data);
-          this.search_status = true;
-          console.log("search_status", this.search_status);
-          this.nearby_places = response.data;
-          this.next_page_token = response.data[0]["next_page_token"];
+          if (response.data.length > 0) {
+            console.log(params);
+            console.log("next_page_token", response.data[0]["next_page_token"]);
+            console.log("nearby search", response.data);
+            this.search_status = true;
+            console.log("search_status", this.search_status);
+            this.nearby_places = response.data;
+            this.next_page_token = response.data[0]["next_page_token"];
+          } else {
+            this.message = "No results, try broadening your keyword search.";
+          }
         })
         .catch((error) => {
           console.log(error.messages);
