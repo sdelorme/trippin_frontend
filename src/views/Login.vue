@@ -8,8 +8,8 @@
         </li>
       </ul>
       <div class="form-group">
-        <label>Email:</label>
-        <input type="email" class="form-control" v-model="email" />
+        <label>Username:</label>
+        <input type="text" class="form-control" v-model="username" />
       </div>
       <div class="form-group">
         <label>Password:</label>
@@ -26,7 +26,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      email: "",
+      username: "",
       password: "",
       errors: [],
     };
@@ -34,7 +34,7 @@ export default {
   methods: {
     submit: function () {
       var params = {
-        email: this.email,
+        username: this.username,
         password: this.password,
       };
       axios
