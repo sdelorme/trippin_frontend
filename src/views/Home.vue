@@ -39,6 +39,7 @@
         <img
           v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photo_reference=${photo_reference}&key=${api_key}`"
         />
+        <br />
         <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
         <br />
         {{
