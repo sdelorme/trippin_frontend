@@ -40,29 +40,22 @@
           v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photo_reference=${photo_reference}&key=${api_key}`"
         />
         <br />
-        <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
-        <br />
-        {{
-          place.phone_number
-        }}
-        <br />
-        {{
-          place.address
-        }}
-        <div v-for="item in place.hours" :key="item">
-          {{ item }}
+        <li>
+          <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
+        </li>
+        <li>{{ place.phone_number }}</li>
+        <li>{{ place.address }}</li>
+        <div v-if="place.hours">
+          <div v-for="item in place.hours" :key="item">
+            <li>{{ item }}</li>
+          </div>
         </div>
-        Rating:
-        {{
-          place.rating
-        }}
-        <br />
-        Total Ratings:
-        {{
-          place.user_ratings_total
-        }}
-        <br />
-        <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">See More Information Here</a>
+        <div v-else>No hours listed</div>
+        <li>Rating: {{ place.rating }}</li>
+        <li>Total Ratings: {{ place.user_ratings_total }}</li>
+        <li>
+          <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">See More Information Here</a>
+        </li>
 
         <br />
       </ul>
