@@ -34,29 +34,48 @@
     <div id="previous_page">
       <button v-if="need_previous_page == true" v-on:click="nearbySearch()" type="button">Previous Page</button>
     </div>
-    <div>
+    <div id="place_details">
       <ul v-if="place_id.length > 0" style="list-style: none">
-        <img
-          v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photo_reference=${photo_reference}&key=${api_key}`"
-        />
+        <div v-if="place.photos">
+          <img
+            v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photo_reference=${photo_reference}&key=${api_key}`"
+          />
+        </div>
+        <div v-else>No photo</div>
         <br />
-        <li>
-          <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
-        </li>
-        <li>{{ place.phone_number }}</li>
-        <li>{{ place.address }}</li>
+        <div v-if="place.website">
+          <li>
+            <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
+          </li>
+        </div>
+        <div v-else>{{ place.name }}</div>
+        <div v-if="place.phone_number">
+          <li>{{ place.phone_number }}</li>
+        </div>
+        <div v-else>No phone number listed</div>
+        <div v-if="place.address">
+          <li>{{ place.address }}</li>
+        </div>
+        <div v-else>No address listed</div>
         <div v-if="place.hours">
           <div v-for="item in place.hours" :key="item">
             <li>{{ item }}</li>
           </div>
         </div>
         <div v-else>No hours listed</div>
-        <li>Rating: {{ place.rating }}</li>
-        <li>Total Ratings: {{ place.user_ratings_total }}</li>
-        <li>
-          <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">See More Information Here</a>
-        </li>
-
+        <div v-if="place.rating > 0">
+          <li>Rating: {{ place.rating }}</li>
+        </div>
+        <div v-else>No ratings listed</div>
+        <div v-if="place.user_ratings_total > 0">
+          <li>Total Ratings: {{ place.user_ratings_total }}</li>
+        </div>
+        <div v-else>No rating totals</div>
+        <div v-if="place.google_url">
+          <li>
+            <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">See More Information Here</a>
+          </li>
+        </div>
         <br />
       </ul>
     </div>
@@ -74,8 +93,7 @@ export default {
       nearby_places: {},
       place: {},
       address: "",
-      photo_reference:
-        "Aap_uEA7vb0DDYVJWEaX3O-AtYp77AaswQKSGtDaimt3gt7QCNpdjp1BkdM6acJ96xTec3tsV_ZJNL_JP-lqsVxydG3nh739RE_hepOOL05tfJh2_ranjMadb3VoBYFvF0ma6S24qZ6QJUuV6sSRrhCskSBP5C1myCzsebztMfGvm7ij3gZT",
+      photo_reference: "",
       keyword: "",
       type: "",
       place_id: "",
@@ -135,12 +153,17 @@ export default {
     },
     showPlaceDetails: function (i) {
       this.place_id = this.nearby_places[i].place_id;
-      this.photo_reference = this.nearby_places[i].photos[0]["photo_reference"];
+      if (this.nearby_places[i].photos) {
+        this.photo_reference = this.nearby_places[i].photos[0]["photo_reference"];
+      } else {
+        this.photo_reference =
+          "Aap_uEA7vb0DDYVJWEaX3O-AtYp77AaswQKSGtDaimt3gt7QCNpdjp1BkdM6acJ96xTec3tsV_ZJNL_JP-lqsVxydG3nh739RE_hepOOL05tfJh2_ranjMadb3VoBYFvF0ma6S24qZ6QJUuV6sSRrhCskSBP5C1myCzsebztMfGvm7ij3gZT";
+      }
       console.log("here is place_id", this.place_id);
       console.log("here is photo reference", this.photo_reference);
       var params = {
         place_id: this.place_id,
-        photo_reference: this.photo_reference,
+        // photo_reference: this.photo_reference,
       };
       axios
         .get("/api/places/place_details", { params })
