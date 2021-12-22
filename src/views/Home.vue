@@ -78,6 +78,7 @@
         </div>
         <br />
       </ul>
+      <button type="button" v-on:click="addToTripEvents()">Add to trip</button>
     </div>
   </div>
 </template>
@@ -102,6 +103,7 @@ export default {
       search_status: false,
       need_previous_page: false,
       api_key: process.env.VUE_APP_MY_API_KEY,
+      errors: [],
     };
   },
   created: function () {
@@ -171,6 +173,32 @@ export default {
           console.log(params);
           console.log("showing place details", response);
           this.place = response.data;
+        })
+        .catch((error) => {
+          console.log(error.messages);
+        });
+    },
+    addToTripEvents: function () {
+      var params = {
+        place_id: this.place_id,
+        name: this.place["name"],
+        address: this.place["address"],
+        phone_number: this.place["phone_number"],
+        hours: this.place["hours"],
+        rating: this.place["rating"],
+        user_ratings_total: this.place["user_ratings_total"],
+        website: this.place["website"],
+        google_url: this.place["google_url"],
+        lat: this.place["lat"],
+        lng: this.place["lng"],
+        photo_reference: this.photo_reference,
+        user_id: localStorage.getItem("user_id"),
+      };
+      axios
+        .post("/api/trip_events/new", params)
+        .then((response) => {
+          console.log(params);
+          console.log("adding this to trip_events", response);
         })
         .catch((error) => {
           console.log(error.messages);
