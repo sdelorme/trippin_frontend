@@ -1,13 +1,13 @@
 <template>
   <div class="home">
     <div v-for="event in trip_events" :key="event.id">
-      <ol>
+      <ul>
         <li>
           <a v-bind:href="event.website" target="_blank" rel="noreferrer noopener">{{ event.name }}</a>
         </li>
         <p>{{ event.address }}</p>
         <p>{{ event.phone_number }}</p>
-      </ol>
+      </ul>
     </div>
   </div>
 </template>
