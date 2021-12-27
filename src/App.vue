@@ -1,24 +1,18 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+      <div id="nav">
+        <router-link to="/">Home</router-link>
+        |
+        <router-link to="/about">About</router-link>
+        |
+        <router-link v-if="!isLoggedIn()" to="/signup">Sign Up</router-link>
+        |
+        <router-link v-if="!isLoggedIn()" to="/login">Login</router-link>
+        |
+        <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link>
+        |
+        <router-link v-if="isLoggedIn()" to="/trip_events">My Trip Events</router-link>
       </div>
 
       <v-spacer></v-spacer>
@@ -35,12 +29,34 @@
   </v-app>
 </template>
 
+<style>
+#nav {
+  padding: 30px;
+}
+#nav a {
+  font-weight: bold;
+  color: #fcfcfc;
+}
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
+
 <script>
 export default {
   name: "App",
-
-  data: () => ({
-    //
-  }),
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        console.log("logged in");
+        return true;
+      } else {
+        return false;
+      }
+    },
+    getUserId: function () {
+      return localStorage.getItem("user_id");
+    },
+  },
 };
 </script>
