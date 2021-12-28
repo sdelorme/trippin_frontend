@@ -3,15 +3,15 @@
     <v-app-bar app color="primary" dark>
       <div id="nav">
         <router-link to="/">Home</router-link>
-        |
+        ++
         <router-link to="/calendar">Calendar</router-link>
-        |
+        ++
         <router-link v-if="!isLoggedIn()" to="/signup">Sign Up</router-link>
-        |
+        ++
         <router-link v-if="!isLoggedIn()" to="/login">Login</router-link>
-        |
+        ++
         <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link>
-        |
+        ++
         <router-link v-if="isLoggedIn()" to="/trip_events">My Trip Events</router-link>
       </div>
 
