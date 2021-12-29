@@ -77,6 +77,99 @@
           </li>
         </div>
         <br />
+        <v-row justify="center">
+          <v-col cols="12" sm="6" md="4">
+            <v-menu
+              ref="menu"
+              v-model="date_status"
+              :close-on-content-click="false"
+              :return-value.sync="date"
+              transition="scale-transition"
+              offset-y
+              min-width="auto"
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <v-text-field
+                  v-model="date"
+                  label="Choose date"
+                  prepend-icon="mdi-calendar"
+                  v-bind="attrs"
+                  v-on="on"
+                ></v-text-field>
+              </template>
+              <v-date-picker v-model="selected_date" no-title scrollable>
+                <v-spacer></v-spacer>
+                <v-btn text color="primary" @click="date_status = false">Cancel</v-btn>
+                <v-btn text color="primary" @click="$refs.menu.save(selected_date)">OK</v-btn>
+                <!-- need to attach the save action to a method -->
+              </v-date-picker>
+            </v-menu>
+          </v-col>
+          <v-row>
+            <v-col cols="11" sm="5">
+              <v-menu
+                ref="menu"
+                v-model="start_time_status"
+                :close-on-content-click="false"
+                :nudge-right="40"
+                :return-value.sync="start_time"
+                transition="scale-transition"
+                offset-y
+                max-width="290px"
+                min-width="290px"
+              >
+                <template v-slot:activator="{ on, attrs }">
+                  <v-text-field
+                    v-model="start_time"
+                    label="Choose start time"
+                    prepend-icon="mdi-clock-time-four-outline"
+                    readonly
+                    v-bind="attrs"
+                    v-on="on"
+                  ></v-text-field>
+                </template>
+                <v-time-picker
+                  v-if="start_time_status"
+                  v-model="start_time"
+                  full-width
+                  @click:minute="$refs.menu.save(start_time)"
+                >
+                <!-- need to attach the save action to a method it is not working -->
+                </v-time-picker>
+              </v-menu>
+            </v-col>
+            <v-col cols="11" sm="5">
+              <v-menu
+                ref="menu"
+                v-model="end_time_status"
+                :close-on-content-click="false"
+                :nudge-right="40"
+                :return-value.sync="end_time"
+                transition="scale-transition"
+                offset-y
+                max-width="290px"
+                min-width="290px"
+              >
+                <template v-slot:activator="{ on, attrs }">
+                  <v-text-field
+                    v-model="end_time"
+                    label="Choose end time"
+                    prepend-icon="mdi-clock-time-four-outline"
+                    readonly
+                    v-bind="attrs"
+                    v-on="on"
+                  ></v-text-field>
+                </template>
+                <v-time-picker
+                  v-if="end_time_status"
+                  v-model="end_time"
+                  full-width
+                  @click:minute="$refs.menu.save(end_time)"
+                ></v-time-picker>
+              </v-menu>
+            </v-col>
+          </v-row>
+        </v-row>
       </ul>
       <button type="button" v-on:click="addToTripEvents()">Add to trip</button>
     </div>
@@ -104,6 +197,13 @@ export default {
       need_previous_page: false,
       api_key: process.env.VUE_APP_MY_API_KEY,
       errors: [],
+      date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().substr(0, 10),
+      selected_date: null,
+      date_status: false,
+      start_time: null,
+      end_time: null,
+      start_time_status: false,
+      end_time_status: false,
     };
   },
   created: function () {

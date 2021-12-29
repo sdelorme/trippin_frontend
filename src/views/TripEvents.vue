@@ -7,6 +7,8 @@
         </li>
         <p>{{ event.address }}</p>
         <p>{{ event.phone_number }}</p>
+        <p>Start:{{ event.start }}</p>
+        <p>End:{{ event.end }}</p>
       </ul>
     </div>
   </div>
@@ -19,7 +21,6 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Trip Events",
       trip_events: [],
     };
   },
