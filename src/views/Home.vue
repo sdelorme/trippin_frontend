@@ -82,15 +82,15 @@
             <v-menu
               ref="menu"
               v-model="date_status"
-              :close-on-content-click="false"
+              :close-on-content-click="true"
               :return-value.sync="date"
               transition="scale-transition"
-              offset-y
+              offset-x
               min-width="auto"
             >
               <template v-slot:activator="{ on, attrs }">
                 <v-text-field
-                  v-model="date"
+                  v-model="selected_date"
                   label="Choose date"
                   prepend-icon="mdi-calendar"
                   v-bind="attrs"
@@ -100,21 +100,20 @@
               <v-date-picker v-model="selected_date" no-title scrollable>
                 <v-spacer></v-spacer>
                 <v-btn text color="primary" @click="date_status = false">Cancel</v-btn>
-                <v-btn text color="primary" @click="$refs.menu.save(selected_date)">OK</v-btn>
-                <!-- need to attach the save action to a method -->
+                <v-btn text color="primary">OK</v-btn>
+                <!-- need to attach the save action to a method here when OK is pressed, when cancel is pressed, selected_date goes to NULL-->
               </v-date-picker>
             </v-menu>
           </v-col>
           <v-row>
-            <v-col cols="11" sm="5">
+            <v-col cols="auto">
               <v-menu
                 ref="menu"
                 v-model="start_time_status"
                 :close-on-content-click="false"
                 :nudge-right="40"
-                :return-value.sync="start_time"
                 transition="scale-transition"
-                offset-y
+                offset-x
                 max-width="290px"
                 min-width="290px"
               >
@@ -128,25 +127,23 @@
                     v-on="on"
                   ></v-text-field>
                 </template>
-                <v-time-picker
-                  v-if="start_time_status"
-                  v-model="start_time"
-                  full-width
-                  @click:minute="$refs.menu.save(start_time)"
-                >
-                <!-- need to attach the save action to a method it is not working -->
+                <v-time-picker v-if="start_time_status" v-model="start_time" full-width>
+                  <v-btn text color="primary">Cancel</v-btn>
+                  <v-btn text color="primary" @click="start_time_status = false">OK</v-btn>
+                  <!-- need to attach the save action to a method it is not working -->
                 </v-time-picker>
               </v-menu>
             </v-col>
-            <v-col cols="11" sm="5">
+          </v-row>
+          <v-row>
+            <v-col cols="auto">
               <v-menu
                 ref="menu"
                 v-model="end_time_status"
                 :close-on-content-click="false"
                 :nudge-right="40"
-                :return-value.sync="end_time"
                 transition="scale-transition"
-                offset-y
+                offset-x
                 max-width="290px"
                 min-width="290px"
               >
@@ -160,12 +157,10 @@
                     v-on="on"
                   ></v-text-field>
                 </template>
-                <v-time-picker
-                  v-if="end_time_status"
-                  v-model="end_time"
-                  full-width
-                  @click:minute="$refs.menu.save(end_time)"
-                ></v-time-picker>
+                <v-time-picker v-if="end_time_status" v-model="end_time" full-width>
+                  <v-btn text color="primary">Cancel</v-btn>
+                  <v-btn text color="primary" @click="end_time_status = false">OK</v-btn>
+                </v-time-picker>
               </v-menu>
             </v-col>
           </v-row>
