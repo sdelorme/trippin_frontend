@@ -166,7 +166,7 @@
           </v-row>
         </v-row>
       </ul>
-      <button type="button" v-on:click="addToTripEvents()">Add to trip</button>
+      <button type="button" @click="addToTripEvents()">Add to trip</button>
     </div>
   </div>
 </template>
@@ -288,11 +288,15 @@ export default {
         lng: this.place["lng"],
         photo_reference: this.photo_reference,
         user_id: localStorage.getItem("user_id"),
+        start: this.start_time,
+        end: this.end_time,
       };
       axios
         .post("/api/trip_events/new", params)
         .then((response) => {
           console.log(params);
+          console.log(this.start_time);
+          console.log(this.end_time);
           console.log("adding this to trip_events", response);
         })
         .catch((error) => {
