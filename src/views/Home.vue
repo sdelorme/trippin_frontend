@@ -288,8 +288,8 @@ export default {
         lng: this.place["lng"],
         photo_reference: this.photo_reference,
         user_id: localStorage.getItem("user_id"),
-        start: this.start_time,
-        end: this.end_time,
+        start: `${this.selected_date} ${this.start_time}`,
+        end: `${this.selected_date} ${this.end_time}`,
       };
       axios
         .post("/api/trip_events/new", params)
