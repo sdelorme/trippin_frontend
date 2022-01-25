@@ -101,7 +101,6 @@
                 <v-spacer></v-spacer>
                 <v-btn text color="primary" @click="date_status = false">Cancel</v-btn>
                 <v-btn text color="primary">OK</v-btn>
-                <!-- need to attach the save action to a method here when OK is pressed, when cancel is pressed, selected_date goes to NULL-->
               </v-date-picker>
             </v-menu>
           </v-col>
@@ -298,6 +297,7 @@ export default {
           console.log(this.start_time);
           console.log(this.end_time);
           console.log("adding this to trip_events", response);
+          this.$router.push({ name: "Trip Events" });
         })
         .catch((error) => {
           console.log(error.messages);
