@@ -1,19 +1,17 @@
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
-      <div id="nav">
-        <router-link to="/">Home</router-link>
-        ++
-        <router-link to="/calendar">Calendar</router-link>
-        ++
-        <router-link v-if="!isLoggedIn()" to="/signup">Sign Up</router-link>
-        ++
-        <router-link v-if="!isLoggedIn()" to="/login">Login</router-link>
-        ++
-        <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link>
-        ++
-        <router-link v-if="isLoggedIn()" to="/trip_events">My Trip Events</router-link>
-      </div>
+  <v-app id="inspire">
+    <v-app-bar app color="black" dark elevation="1">
+      <v-btn text color="accent"><router-link to="/">Home</router-link></v-btn>
+      +
+      <v-btn text color="accent"><router-link to="/calendar">Calendar</router-link></v-btn>
+      +
+      <v-btn text color="accent"><router-link v-if="!isLoggedIn()" to="/signup">Sign Up</router-link></v-btn>
+      +
+      <v-btn text color="accent"><router-link v-if="!isLoggedIn()" to="/login">Login</router-link></v-btn>
+      +
+      <v-btn text color="accent"><router-link v-if="isLoggedIn()" to="/logout">Logout</router-link></v-btn>
+      +
+      <v-btn text color="accent"><router-link v-if="isLoggedIn()" to="/trip_events">My Trip Events</router-link></v-btn>
 
       <v-spacer></v-spacer>
     </v-app-bar>
