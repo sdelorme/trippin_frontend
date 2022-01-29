@@ -3,6 +3,8 @@
     <v-app-bar app color="black" dark elevation="1">
       <v-btn text color="accent"><router-link to="/">Home</router-link></v-btn>
       +
+      <v-btn text color="accent"><router-link to="/findPlaces">Find Places</router-link></v-btn>
+      +
       <v-btn text color="accent"><router-link to="/calendar">Calendar</router-link></v-btn>
       +
       <v-btn text color="accent"><router-link v-if="!isLoggedIn()" to="/signup">Sign Up</router-link></v-btn>
