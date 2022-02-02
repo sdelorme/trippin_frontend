@@ -4,9 +4,9 @@
     <header id="header">
       <div class="inner">
         <!-- Logo -->
-        <a href="index.html" class="logo">
+        <a href="/" class="logo">
           <span class="symbol"><img src="images/logo.svg" alt="" /></span>
-          <span class="title">Phantom</span>
+          <span class="title">Trippin</span>
         </a>
 
         <!-- Nav -->

@@ -18,20 +18,36 @@
       <p>{{ message }}</p>
     </div>
     <v-main>
-      <v-container>
-        <v-row>
-          <v-col v-for="(place, i) in nearby_places" :key="i" cols="4">
-            <v-card height="350" @click="showPlaceDetails(i)" style="list-style: none" class="text-center">
-              <v-card-title class="justify-center">{{ place.name }}</v-card-title>
-              <li>Should be picture here</li>
-              <li>Rating: {{ place.rating }}</li>
-              <li>Number of Ratings: {{ place.user_ratings_total }}</li>
-              <li>Address: {{ place.address }}</li>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
+      <section class="tiles">
+        <v-container>
+          <v-row>
+            <v-col v-for="(place, i) in nearby_places" :key="i" cols="4">
+              <v-card height="350" @click="showPlaceDetails(i)" style="list-style: none" class="text-center">
+                <v-card-title class="justify-center">{{ place.name }}</v-card-title>
+                <li>Should be picture here</li>
+                <li>Rating: {{ place.rating }}</li>
+                <li>Number of Ratings: {{ place.user_ratings_total }}</li>
+                <li>Address: {{ place.address }}</li>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+      </section>
     </v-main>
+    <!-- <section class="tiles" v-for="(place, i) in nearby_places" :key="i" cols="4">
+      <article class="style1" @click="showPlaceDetails(i)" style="list-style: none">
+        <span class="image">
+          <img src="images/pic01.jpg" alt="" />
+        </span>
+        <div class="content">
+          <li>{{ place.name }}</li>
+          <li>Should be picture here</li>
+          <li>Rating: {{ place.rating }}</li>
+          <li>Number of Ratings: {{ place.user_ratings_total }}</li>
+          <li>Address: {{ place.address }}</li>
+        </div>
+      </article>
+    </section> -->
     <div id="next_page">
       <button v-if="search_status == true && next_page_token" v-on:click="nearbySearchNextPage()" type="button">
         Next Page
