@@ -99,7 +99,7 @@
           </li>
         </div>
         <br />
-        <v-row justify="center">
+        <!-- <v-row justify="center">
           <v-col cols="12" sm="6" md="4">
             <v-menu
               ref="menu"
@@ -151,7 +151,6 @@
                 <v-time-picker v-if="start_time_status" v-model="start_time" full-width>
                   <v-btn text color="primary">Cancel</v-btn>
                   <v-btn text color="primary" @click="start_time_status = false">OK</v-btn>
-                  <!-- need to attach the save action to a method it is not working -->
                 </v-time-picker>
               </v-menu>
             </v-col>
@@ -185,9 +184,9 @@
               </v-menu>
             </v-col>
           </v-row>
-        </v-row>
+        </v-row> -->
       </ul>
-      <button type="button" @click="addToTripEvents()">Add to trip</button>
+      <button v-if="place_id" type="button" @click="addToTripEvents()">Add to trip</button>
     </div>
   </div>
 </template>
