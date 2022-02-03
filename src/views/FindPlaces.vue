@@ -98,7 +98,6 @@
             <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">See More Information Here</a>
           </li>
         </div>
-        <br />
         <!-- <v-row justify="center">
           <v-col cols="12" sm="6" md="4">
             <v-menu
