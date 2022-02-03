@@ -1,40 +1,43 @@
 <template>
-  <div class="home">
-    <h1>Nearby Places</h1>
-    <form v-on:submit.prevent="nearbySearch()">
-      Enter Address:
-      <input type="text" v-model="address" />
-      <hr />
-      Enter Keyword:
-      <input type="text" v-model="keyword" />
-      <hr />
-      Enter Type: Change this to dropdown when bootstrap is done
-      <input type="text" v-model="type" />
-      <hr />
-      <input type="submit" value="Search" />
-      <br />
-    </form>
-    <div>
-      <p>{{ message }}</p>
-    </div>
-    <v-main>
-      <section class="tiles">
-        <v-container>
-          <v-row>
-            <v-col v-for="(place, i) in nearby_places" :key="i" cols="4">
-              <v-card height="350" @click="showPlaceDetails(i)" style="list-style: none" class="text-center">
-                <v-card-title class="justify-center">{{ place.name }}</v-card-title>
-                <li>Should be picture here</li>
-                <li>Rating: {{ place.rating }}</li>
-                <li>Number of Ratings: {{ place.user_ratings_total }}</li>
-                <li>Address: {{ place.address }}</li>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
-      </section>
-    </v-main>
-    <!-- <section class="tiles" v-for="(place, i) in nearby_places" :key="i" cols="4">
+  <div id="wrapper">
+    <div id="main">
+      <div class="inner">
+        <h1>Nearby Places</h1>
+        <form v-on:submit.prevent="nearbySearch()">
+          Enter Address:
+          <input type="text" v-model="address" />
+          <hr />
+          Enter Keyword:
+          <input type="text" v-model="keyword" />
+          <hr />
+          Enter Type: Change this to dropdown when bootstrap is done
+          <input type="text" v-model="type" />
+          <hr />
+          <input type="submit" value="Search" />
+          <br />
+        </form>
+        <div>
+          <p>{{ message }}</p>
+        </div>
+
+        <section>
+          <div class="row gtr-uniform">
+            <div class="col-4" v-for="(place, i) in nearby_places" :key="i" @click="showPlaceDetails(i)">
+              <div class="box">
+                <span class="image fit">
+                  <ul class="alt">
+                    <li>{{ place.name }}</li>
+                    <li>Should be picture here</li>
+                    <li>Rating: {{ place.rating }}</li>
+                    <li>Number of Ratings: {{ place.user_ratings_total }}</li>
+                    <li>Address: {{ place.address }}</li>
+                  </ul>
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- <section class="tiles" v-for="(place, i) in nearby_places" :key="i" cols="4">
       <article class="style1" @click="showPlaceDetails(i)" style="list-style: none">
         <span class="image">
           <img src="images/pic01.jpg" alt="" />
@@ -48,57 +51,61 @@
         </div>
       </article>
     </section> -->
-    <div id="next_page">
-      <button v-if="search_status == true && next_page_token" v-on:click="nearbySearchNextPage()" type="button">
-        Next Page
-      </button>
-    </div>
-    <div id="previous_page">
-      <button v-if="need_previous_page == true" v-on:click="nearbySearch()" type="button">Previous Page</button>
-    </div>
-    <div id="place_details">
-      <ul v-if="place_id.length > 0" style="list-style: none">
-        <div v-if="place.photos">
-          <img
-            v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photo_reference=${photo_reference}&key=${api_key}`"
-          />
-        </div>
-        <div v-else>No photo</div>
         <br />
-        <div v-if="place.website">
-          <li>
-            <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
-          </li>
+
+        <div id="next_page">
+          <button v-if="search_status == true && next_page_token" v-on:click="nearbySearchNextPage()" type="button">
+            Next Page
+          </button>
         </div>
-        <div v-else>{{ place.name }}</div>
-        <div v-if="place.phone_number">
-          <li>{{ place.phone_number }}</li>
+        <div id="previous_page">
+          <button v-if="need_previous_page == true" v-on:click="nearbySearch()" type="button">Previous Page</button>
         </div>
-        <div v-else>No phone number listed</div>
-        <div v-if="place.address">
-          <li>{{ place.address }}</li>
-        </div>
-        <div v-else>No address listed</div>
-        <div v-if="place.hours">
-          <div v-for="item in place.hours" :key="item">
-            <li>{{ item }}</li>
-          </div>
-        </div>
-        <div v-else>No hours listed</div>
-        <div v-if="place.rating > 0">
-          <li>Rating: {{ place.rating }}</li>
-        </div>
-        <div v-else>No ratings listed</div>
-        <div v-if="place.user_ratings_total > 0">
-          <li>Total Ratings: {{ place.user_ratings_total }}</li>
-        </div>
-        <div v-else>No rating totals</div>
-        <div v-if="place.google_url">
-          <li>
-            <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">See More Information Here</a>
-          </li>
-        </div>
-        <!-- <v-row justify="center">
+        <div id="place_details">
+          <ul v-if="place_id.length > 0" style="list-style: none">
+            <div v-if="place.photos">
+              <img
+                v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photo_reference=${photo_reference}&key=${api_key}`"
+              />
+            </div>
+            <div v-else>No photo</div>
+            <br />
+            <div v-if="place.website">
+              <li>
+                <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
+              </li>
+            </div>
+            <div v-else>{{ place.name }}</div>
+            <div v-if="place.phone_number">
+              <li>{{ place.phone_number }}</li>
+            </div>
+            <div v-else>No phone number listed</div>
+            <div v-if="place.address">
+              <li>{{ place.address }}</li>
+            </div>
+            <div v-else>No address listed</div>
+            <div v-if="place.hours">
+              <div v-for="item in place.hours" :key="item">
+                <li>{{ item }}</li>
+              </div>
+            </div>
+            <div v-else>No hours listed</div>
+            <div v-if="place.rating > 0">
+              <li>Rating: {{ place.rating }}</li>
+            </div>
+            <div v-else>No ratings listed</div>
+            <div v-if="place.user_ratings_total > 0">
+              <li>Total Ratings: {{ place.user_ratings_total }}</li>
+            </div>
+            <div v-else>No rating totals</div>
+            <div v-if="place.google_url">
+              <li>
+                <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">
+                  See More Information Here
+                </a>
+              </li>
+            </div>
+            <!-- <v-row justify="center">
           <v-col cols="12" sm="6" md="4">
             <v-menu
               ref="menu"
@@ -184,8 +191,10 @@
             </v-col>
           </v-row>
         </v-row> -->
-      </ul>
-      <button v-if="place_id" type="button" @click="addToTripEvents()">Add to trip</button>
+          </ul>
+          <button v-if="place_id" type="button" @click="addToTripEvents()">Add to trip</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
