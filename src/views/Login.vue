@@ -10,6 +10,7 @@
                 <input type="text" name="username" id="username" v-model="username" placeholder="Username" />
               </div>
             </div>
+            <br />
             <div class="row gtr-uniform">
               <div class="col-6 col-12-xsmall">
                 <input type="password" name="password" id="password" v-model="password" placeholder="Password" />

@@ -3,18 +3,36 @@
     <div id="main">
       <div class="inner">
         <h1>Nearby Places</h1>
-        <form v-on:submit.prevent="nearbySearch()">
-          Enter Address:
-          <input type="text" v-model="address" />
-          <hr />
-          Enter Keyword:
-          <input type="text" v-model="keyword" />
-          <hr />
-          Enter Type: Change this to dropdown when bootstrap is done
-          <input type="text" v-model="type" />
-          <hr />
-          <input type="submit" value="Search" />
-          <br />
+        <form id="nearbySearch" v-on:submit.prevent="nearbySearch()">
+          <div class="row gtr-uniform">
+            <div class="col-12 col-12-xsmall">
+              <strong>Enter Address:</strong>
+              <input
+                type="text"
+                name="address"
+                id="address"
+                v-model="address"
+                placeholder="Ex. 800 W Main St New York, NY or Chicago, IL"
+              />
+            </div>
+            <div class="col-12 col-12-xsmall">
+              <strong>Enter Keyword:</strong>
+              <input
+                type="text"
+                name="keyword"
+                id="keyword"
+                v-model="keyword"
+                placeholder="What are you looking for? Ex. Brewery, Pizza, Beaches, Parks, Zoo, Night Club"
+              />
+            </div>
+            <!-- Enter Type:
+          <input type="text" v-model="type" /> -->
+            <div class="col-12">
+              <ul class="actions">
+                <li><input form="nearbySearch" type="submit" class="primary" value="Search" /></li>
+              </ul>
+            </div>
+          </div>
         </form>
         <div>
           <p>{{ message }}</p>
@@ -37,20 +55,7 @@
             </div>
           </div>
         </section>
-        <!-- <section class="tiles" v-for="(place, i) in nearby_places" :key="i" cols="4">
-      <article class="style1" @click="showPlaceDetails(i)" style="list-style: none">
-        <span class="image">
-          <img src="images/pic01.jpg" alt="" />
-        </span>
-        <div class="content">
-          <li>{{ place.name }}</li>
-          <li>Should be picture here</li>
-          <li>Rating: {{ place.rating }}</li>
-          <li>Number of Ratings: {{ place.user_ratings_total }}</li>
-          <li>Address: {{ place.address }}</li>
-        </div>
-      </article>
-    </section> -->
+
         <br />
 
         <div id="next_page">
@@ -212,7 +217,7 @@ export default {
       address: "",
       photo_reference: "",
       keyword: "",
-      type: "",
+      // type: "",
       place_id: "",
       next_page_token: "",
       message: "",
@@ -237,7 +242,7 @@ export default {
       var params = {
         address: this.address,
         keyword: encodeURIComponent(this.keyword),
-        type: this.type,
+        // type: this.type,
         next_page_token: this.next_page_token,
       };
       axios
