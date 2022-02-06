@@ -2242,6 +2242,15 @@ textarea {
   text-decoration: none;
   width: 100%;
 }
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+select::placeholder,
+textarea::placeholder {
+  font-style: italic;
+  opacity: 0.5;
+}
 
 input[type="text"]:invalid,
 input[type="password"]:invalid,
