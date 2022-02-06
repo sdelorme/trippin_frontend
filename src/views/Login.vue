@@ -1,22 +1,34 @@
 <template>
-  <div class="login">
-    <form v-on:submit.prevent="submit()">
-      <h1>Login</h1>
-      <ul>
-        <li class="text-danger" v-for="error in errors" v-bind:key="error">
-          {{ error }}
-        </li>
-      </ul>
-      <div class="form-group">
-        <label>Username:</label>
-        <input type="text" class="form-control" v-model="username" />
+  <div id="wrapper">
+    <div id="main">
+      <div class="inner">
+        <h1>Login</h1>
+        <section>
+          <form id="login" @submit.prevent="submit()">
+            <div class="row gtr-uniform">
+              <div class="col-6 col-12-xsmall">
+                <input type="text" name="username" id="username" v-model="username" placeholder="Username" />
+              </div>
+            </div>
+            <div class="row gtr-uniform">
+              <div class="col-6 col-12-xsmall">
+                <input type="password" name="password" id="password" v-model="password" placeholder="Password" />
+              </div>
+              <div class="col-12">
+                <ul class="actions">
+                  <li><input form="login" type="submit" class="primary" value="Submit" /></li>
+                </ul>
+              </div>
+            </div>
+            <ul>
+              <li class="text-danger" v-for="error in errors" v-bind:key="error">
+                {{ error }}
+              </li>
+            </ul>
+          </form>
+        </section>
       </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" class="form-control" v-model="password" />
-      </div>
-      <input type="submit" class="btn btn-primary" value="Submit" />
-    </form>
+    </div>
   </div>
 </template>
 
