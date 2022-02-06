@@ -6,7 +6,7 @@
         <div class="inner">
           <!-- Logo -->
           <a href="/" class="logo">
-            <span class="symbol"><img src="images/logo.svg" alt="" /></span>
+            <span class="symbol"><img src="images/logo.png" alt="" /></span>
             <span class="title">Trippin</span>
           </a>
 
