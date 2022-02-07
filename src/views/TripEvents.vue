@@ -2,6 +2,7 @@
   <div id="wrapper">
     <div id="main">
       <div class="inner">
+        <h1>My Trip Events</h1>
         <div class="table-wrapper">
           <table class="alt">
             <thead>
@@ -17,7 +18,9 @@
             <tbody v-for="event in trip_events" :key="event.id">
               <tr>
                 <td>
-                  <a v-bind:href="event.website" target="_blank" rel="noreferrer noopener">{{ event.name }}</a>
+                  <strong>
+                    <a v-bind:href="event.website" target="_blank" rel="noreferrer noopener">{{ event.name }}</a>
+                  </strong>
                 </td>
                 <td>
                   {{ event.address }}
