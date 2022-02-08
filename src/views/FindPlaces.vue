@@ -57,15 +57,22 @@
         </section>
 
         <br />
-
-        <div id="next_page">
-          <button v-if="search_status == true && next_page_token" v-on:click="nearbySearchNextPage()" type="button">
-            Next Page
-          </button>
-        </div>
-        <div id="previous_page">
-          <button v-if="need_previous_page == true" v-on:click="nearbySearch()" type="button">Previous Page</button>
-        </div>
+        <ul class="actions">
+          <li>
+            <button
+              v-if="search_status == true && next_page_token"
+              v-on:click="nearbySearchNextPage()"
+              class="button primary"
+            >
+              Next Page
+            </button>
+          </li>
+          <li>
+            <button v-if="need_previous_page == true" v-on:click="nearbySearch()" class="button primary">
+              Previous Page
+            </button>
+          </li>
+        </ul>
         <div id="place_details">
           <ul v-if="place_id.length > 0" style="list-style: none">
             <div v-if="place.photos">
@@ -256,6 +263,7 @@ export default {
             console.log("search_status", this.search_status);
             this.nearby_places = response.data;
             this.next_page_token = response.data[0]["next_page_token"];
+            this.need_previous_page = false;
           } else {
             this.message = "No results, try broadening your keyword search.";
           }
