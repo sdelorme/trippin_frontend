@@ -9,7 +9,7 @@
               <tr>
                 <th>Name</th>
                 <th>Address</th>
-                <th>Phone Number</th>
+                <th>Phone</th>
                 <th>Start Time</th>
                 <th>End Time</th>
                 <th>Delete?</th>

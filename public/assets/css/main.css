@@ -2465,6 +2465,8 @@ input[type="radio"] + label:before {
   display: block;
   margin: 0 0 2em 0;
   width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .image.fit img {
