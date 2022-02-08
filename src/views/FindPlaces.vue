@@ -204,7 +204,9 @@
           </v-row>
         </v-row> -->
           </ul>
-          <button v-if="place_id" type="button" @click="addToTripEvents()">Add to trip</button>
+          <ul class="actions">
+            <li><button v-if="place_id" class="button primary" @click="addToTripEvents()">Add to trip</button></li>
+          </ul>
         </div>
       </div>
     </div>
