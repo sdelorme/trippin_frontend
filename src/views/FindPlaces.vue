@@ -73,51 +73,53 @@
             </button>
           </li>
         </ul>
-        <div id="place_details">
-          <ul v-if="place_id.length > 0" style="list-style: none">
-            <div v-if="place.photos">
-              <img
-                v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photo_reference=${photo_reference}&key=${api_key}`"
-              />
-            </div>
-            <div v-else>No photo</div>
-            <br />
-            <div v-if="place.website">
-              <li>
-                <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
-              </li>
-            </div>
-            <div v-else>{{ place.name }}</div>
-            <div v-if="place.phone_number">
-              <li>{{ place.phone_number }}</li>
-            </div>
-            <div v-else>No phone number listed</div>
-            <div v-if="place.address">
-              <li>{{ place.address }}</li>
-            </div>
-            <div v-else>No address listed</div>
-            <div v-if="place.hours">
-              <div v-for="item in place.hours" :key="item">
-                <li>{{ item }}</li>
-              </div>
-            </div>
-            <div v-else>No hours listed</div>
-            <div v-if="place.rating > 0">
-              <li>Rating: {{ place.rating }}</li>
-            </div>
-            <div v-else>No ratings listed</div>
-            <div v-if="place.user_ratings_total > 0">
-              <li>Total Ratings: {{ place.user_ratings_total }}</li>
-            </div>
-            <div v-else>No rating totals</div>
-            <div v-if="place.google_url">
-              <li>
-                <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">
-                  See More Information Here
-                </a>
-              </li>
-            </div>
-            <!-- <v-row justify="center">
+        <div id="wrapper">
+          <div class="inner">
+            <div id="place_details" v-if="place_id.length > 0">
+              <ul class="alt">
+                <div v-if="place.photos">
+                  <img
+                    v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photo_reference=${photo_reference}&key=${api_key}`"
+                  />
+                </div>
+                <div v-else>No photo</div>
+                <br />
+                <div v-if="place.website">
+                  <li>
+                    <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
+                  </li>
+                </div>
+                <div v-else>{{ place.name }}</div>
+                <div v-if="place.phone_number">
+                  <li>{{ place.phone_number }}</li>
+                </div>
+                <div v-else>No phone number listed</div>
+                <div v-if="place.address">
+                  <li>{{ place.address }}</li>
+                </div>
+                <div v-else>No address listed</div>
+                <div v-if="place.hours">
+                  <div v-for="item in place.hours" :key="item">
+                    <li>{{ item }}</li>
+                  </div>
+                </div>
+                <div v-else>No hours listed</div>
+                <div v-if="place.rating > 0">
+                  <li>Rating: {{ place.rating }}</li>
+                </div>
+                <div v-else>No ratings listed</div>
+                <div v-if="place.user_ratings_total > 0">
+                  <li>Total Ratings: {{ place.user_ratings_total }}</li>
+                </div>
+                <div v-else>No rating totals</div>
+                <div v-if="place.google_url">
+                  <li>
+                    <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">
+                      See More Information Here
+                    </a>
+                  </li>
+                </div>
+                <!-- <v-row justify="center">
           <v-col cols="12" sm="6" md="4">
             <v-menu
               ref="menu"
@@ -203,10 +205,28 @@
             </v-col>
           </v-row>
         </v-row> -->
-          </ul>
-          <ul class="actions">
-            <li><button v-if="place_id" class="button primary" @click="addToTripEvents()">Add to trip</button></li>
-          </ul>
+              </ul>
+              <div class="row">
+                <div class="col-6 col-12-medium">
+                  <ul class="actions">
+                    <li><label for="start_time">Choose Start Time</label></li>
+                    <li><input type="datetime-local" id="start_time" name="start_time" v-model="start_time" /></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6 col-12-medium">
+                  <ul class="actions">
+                    <li><label for="end_time">Choose End Time</label></li>
+                    <li><input type="datetime-local" id="end_time" name="end_time" v-model="end_time" /></li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="actions">
+                <li><button v-if="place_id" class="button primary" @click="addToTripEvents()">Add to trip</button></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -331,8 +351,8 @@ export default {
         lng: this.place["lng"],
         photo_reference: this.photo_reference,
         user_id: localStorage.getItem("user_id"),
-        start: `${this.selected_date} ${this.start_time}`,
-        end: `${this.selected_date} ${this.end_time}`,
+        start: this.start_time,
+        end: this.end_time,
       };
       axios
         .post("/api/trip_events/new", params)
