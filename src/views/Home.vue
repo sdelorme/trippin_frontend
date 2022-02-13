@@ -12,7 +12,7 @@
               <img src="images/pic01.jpg" alt="" />
             </span>
             <a href="/findPlaces">
-              <h2>Chicago,IL</h2>
+              <h2>Chicago</h2>
               <div class="content">
                 <p>A curated trip to Chicago's best dive bars!</p>
               </div>
@@ -22,10 +22,10 @@
             <span class="image">
               <img src="images/pic02.jpg" alt="" />
             </span>
-            <a href="generic.html">
-              <h2>Lorem</h2>
+            <a href="/findPlaces">
+              <h2>New York City</h2>
               <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                <p>Planning a trip to New York? Find out what's good nearby</p>
               </div>
             </a>
           </article>
@@ -33,8 +33,8 @@
             <span class="image">
               <img src="images/pic03.jpg" alt="" />
             </span>
-            <a href="generic.html">
-              <h2>Feugiat</h2>
+            <a href="/findPlaces">
+              <h2>Ann Arbor</h2>
               <div class="content">
                 <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
               </div>
@@ -44,8 +44,8 @@
             <span class="image">
               <img src="images/pic04.jpg" alt="" />
             </span>
-            <a href="generic.html">
-              <h2>Tempus</h2>
+            <a href="/findPlaces">
+              <h2>Boston</h2>
               <div class="content">
                 <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
               </div>
@@ -55,8 +55,8 @@
             <span class="image">
               <img src="images/pic05.jpg" alt="" />
             </span>
-            <a href="generic.html">
-              <h2>Aliquam</h2>
+            <a href="/findPlaces">
+              <h2>Burlington, VT</h2>
               <div class="content">
                 <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
               </div>
@@ -66,8 +66,8 @@
             <span class="image">
               <img src="images/pic06.jpg" alt="" />
             </span>
-            <a href="generic.html">
-              <h2>Veroeros</h2>
+            <a href="/findPlaces">
+              <h2>San Francisco</h2>
               <div class="content">
                 <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
               </div>
@@ -77,8 +77,8 @@
             <span class="image">
               <img src="images/pic07.jpg" alt="" />
             </span>
-            <a href="generic.html">
-              <h2>Ipsum</h2>
+            <a href="/findPlaces">
+              <h2>Los Angeles</h2>
               <div class="content">
                 <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
               </div>
@@ -88,8 +88,8 @@
             <span class="image">
               <img src="images/pic08.jpg" alt="" />
             </span>
-            <a href="generic.html">
-              <h2>Dolor</h2>
+            <a href="/findPlaces">
+              <h2>Seattle</h2>
               <div class="content">
                 <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
               </div>
@@ -99,8 +99,8 @@
             <span class="image">
               <img src="images/pic09.jpg" alt="" />
             </span>
-            <a href="generic.html">
-              <h2>Nullam</h2>
+            <a href="/findPlaces">
+              <h2>Washington D.C.</h2>
               <div class="content">
                 <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
               </div>
@@ -110,8 +110,8 @@
             <span class="image">
               <img src="images/pic10.jpg" alt="" />
             </span>
-            <a href="generic.html">
-              <h2>Ultricies</h2>
+            <a href="/findPlaces">
+              <h2>Nashville</h2>
               <div class="content">
                 <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
               </div>
@@ -121,8 +121,8 @@
             <span class="image">
               <img src="images/pic11.jpg" alt="" />
             </span>
-            <a href="generic.html">
-              <h2>Dictum</h2>
+            <a href="/findPlaces">
+              <h2>Charleston</h2>
               <div class="content">
                 <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
               </div>
@@ -132,8 +132,8 @@
             <span class="image">
               <img src="images/pic12.jpg" alt="" />
             </span>
-            <a href="generic.html">
-              <h2>Pretium</h2>
+            <a href="/findPlaces">
+              <h2>Atlanta</h2>
               <div class="content">
                 <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
               </div>
