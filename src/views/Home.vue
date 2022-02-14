@@ -36,7 +36,7 @@
             <a href="/findPlaces">
               <h2>Ann Arbor</h2>
               <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                <p>Hail to the victors! Check out these local spots in A2.</p>
               </div>
             </a>
           </article>
@@ -47,7 +47,7 @@
             <a href="/findPlaces">
               <h2>Boston</h2>
               <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                <p>Seafood, good beer, and mudslides on the Cape will have you loving Bean Town.</p>
               </div>
             </a>
           </article>
