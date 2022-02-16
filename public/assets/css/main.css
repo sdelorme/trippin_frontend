@@ -2540,6 +2540,14 @@ table.alt {
   border-collapse: separate;
 }
 
+table.alt th {
+  font-size: 1.25em;
+  font-weight: 900;
+  padding: 0.75em 0.75em 0.75em 0.75em;
+  text-align: center;
+  vertical-align: middle;
+}
+
 table.alt tbody tr td {
   border: solid 1px #c9c9c9;
   border-left-width: 0;

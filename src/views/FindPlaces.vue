@@ -89,7 +89,11 @@
                       <br />
                       <div v-if="place.website">
                         <li>
-                          <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
+                          <h1>
+                            <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">
+                              {{ place.name }}
+                            </a>
+                          </h1>
                         </li>
                       </div>
                       <div v-else>{{ place.name }}</div>
@@ -129,23 +133,21 @@
                         </div>
                       </li>
                     </ul>
-                    <div class="row">
-                      <div class="col-6 col-12-medium">
-                        <ul class="actions">
-                          <li><label for="start_time">Choose Start Time</label></li>
-                          <li>
-                            <input type="datetime-local" id="start_time" name="start_time" v-model="start_time" />
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-6 col-12-medium">
-                        <ul class="actions">
-                          <li><label for="end_time">Choose End Time</label></li>
-                          <li><input type="datetime-local" id="end_time" name="end_time" v-model="end_time" /></li>
-                        </ul>
-                      </div>
+                    <div class="table-wrapper">
+                      <table class="alt">
+                        <thead>
+                          <th>Choose Start Time</th>
+                          <th>Choose End Time</th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <input type="datetime-local" id="start_time" name="start_time" v-model="start_time" />
+                            </td>
+                            <td><input type="datetime-local" id="end_time" name="end_time" v-model="end_time" /></td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                     <ul class="actions">
                       <li>
