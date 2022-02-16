@@ -25,8 +25,6 @@
                 placeholder="What are you looking for? Ex. Brewery, Pizza, Beaches, Parks, Zoo, Night Club"
               />
             </div>
-            <!-- Enter Type:
-          <input type="text" v-model="type" /> -->
             <div class="col-12">
               <ul class="actions">
                 <li><input form="nearbySearch" type="submit" class="primary" value="Search" /></li>
@@ -73,75 +71,93 @@
             </button>
           </li>
         </ul>
-        <div id="wrapper">
-          <div class="inner">
-            <div id="place_details" v-if="place_id.length > 0">
-              <ul class="alt">
-                <div v-if="place.photos">
-                  <img
-                    v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photo_reference=${photo_reference}&key=${api_key}`"
-                  />
-                </div>
-                <div v-else>No photo</div>
-                <br />
-                <div v-if="place.website">
-                  <li>
-                    <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
-                  </li>
-                </div>
-                <div v-else>{{ place.name }}</div>
-                <div v-if="place.phone_number">
-                  <li>{{ place.phone_number }}</li>
-                </div>
-                <div v-else>No phone number listed</div>
-                <div v-if="place.address">
-                  <li>{{ place.address }}</li>
-                </div>
-                <div v-else>No address listed</div>
-                <div v-if="place.hours">
-                  <div v-for="item in place.hours" :key="item">
-                    <li>{{ item }}</li>
+        <section>
+          <div id="wrapper">
+            <div class="box" v-if="place_id.length > 0">
+              <div class="inner">
+                <div class="row gtr-uniform">
+                  <div id="place_details" class="col-12">
+                    <ul class="alt">
+                      <div v-if="place.photos">
+                        <span class="image main">
+                          <img
+                            v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photo_reference=${photo_reference}&key=${api_key}`"
+                          />
+                        </span>
+                      </div>
+                      <div v-else>No photo</div>
+                      <br />
+                      <div v-if="place.website">
+                        <li>
+                          <a v-bind:href="place.website" target="_blank" rel="noreferrer noopener">{{ place.name }}</a>
+                        </li>
+                      </div>
+                      <div v-else>{{ place.name }}</div>
+                      <li>
+                        <div v-if="place.phone_number">
+                          {{ place.phone_number }}
+                        </div>
+                        <div v-else>No phone number listed</div>
+                      </li>
+                      <li>
+                        <div v-if="place.address">
+                          {{ place.address }}
+                        </div>
+                        <div v-else>No address listed</div>
+                      </li>
+                      <li>
+                        <div v-if="place.hours">
+                          <div v-for="item in place.hours" :key="item">
+                            {{ item }}
+                          </div>
+                        </div>
+                        <div v-else>No hours listed</div>
+                      </li>
+                      <li>
+                        <div v-if="place.rating > 0">Rating: {{ place.rating }}</div>
+                        <div v-else>No ratings listed</div>
+                      </li>
+                      <li>
+                        <div v-if="place.user_ratings_total > 0">Total Ratings: {{ place.user_ratings_total }}</div>
+                        <div v-else>No rating totals</div>
+                      </li>
+                      <li>
+                        <div v-if="place.google_url">
+                          <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">
+                            See More Information Here
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="row">
+                      <div class="col-6 col-12-medium">
+                        <ul class="actions">
+                          <li><label for="start_time">Choose Start Time</label></li>
+                          <li>
+                            <input type="datetime-local" id="start_time" name="start_time" v-model="start_time" />
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-12-medium">
+                        <ul class="actions">
+                          <li><label for="end_time">Choose End Time</label></li>
+                          <li><input type="datetime-local" id="end_time" name="end_time" v-model="end_time" /></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <ul class="actions">
+                      <li>
+                        <button v-if="place_id" class="button primary" @click="addToTripEvents()">Add to trip</button>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div v-else>No hours listed</div>
-                <div v-if="place.rating > 0">
-                  <li>Rating: {{ place.rating }}</li>
-                </div>
-                <div v-else>No ratings listed</div>
-                <div v-if="place.user_ratings_total > 0">
-                  <li>Total Ratings: {{ place.user_ratings_total }}</li>
-                </div>
-                <div v-else>No rating totals</div>
-                <div v-if="place.google_url">
-                  <li>
-                    <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">
-                      See More Information Here
-                    </a>
-                  </li>
-                </div>
-              </ul>
-              <div class="row">
-                <div class="col-6 col-12-medium">
-                  <ul class="actions">
-                    <li><label for="start_time">Choose Start Time</label></li>
-                    <li><input type="datetime-local" id="start_time" name="start_time" v-model="start_time" /></li>
-                  </ul>
-                </div>
               </div>
-              <div class="row">
-                <div class="col-6 col-12-medium">
-                  <ul class="actions">
-                    <li><label for="end_time">Choose End Time</label></li>
-                    <li><input type="datetime-local" id="end_time" name="end_time" v-model="end_time" /></li>
-                  </ul>
-                </div>
-              </div>
-              <ul class="actions">
-                <li><button v-if="place_id" class="button primary" @click="addToTripEvents()">Add to trip</button></li>
-              </ul>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   </div>
