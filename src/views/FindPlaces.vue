@@ -127,9 +127,11 @@
                       </li>
                       <li>
                         <div v-if="place.google_url">
-                          <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">
-                            See More Information Here
-                          </a>
+                          <h5>
+                            <a v-bind:href="place.google_url" target="_blank" rel="noreferrer noopener">
+                              See More Information Here
+                            </a>
+                          </h5>
                         </div>
                       </li>
                     </ul>
