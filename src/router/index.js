@@ -5,6 +5,7 @@ import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import TripEvents from "../views/TripEvents.vue";
+import SavedTrips from "../views/SavedTrips.vue";
 import FindPlaces from "../views/FindPlaces.vue";
 
 Vue.use(VueRouter);
@@ -17,6 +18,7 @@ const routes = [
   },
   { path: "/findPlaces", name: "Find Places", component: FindPlaces },
   { path: "/trip_events", name: "Trip Events", component: TripEvents },
+  { path: "/saved_trips", name: "Saved Trips", component: SavedTrips },
   { path: "/signup", name: "signup", component: Signup },
   { path: "/login", name: "login", component: Login },
   { path: "/logout", name: "logout", component: Logout },
