@@ -71,7 +71,7 @@
             </button>
           </li>
         </ul>
-        <section>
+        <section id="place_details">
           <div id="wrapper">
             <div class="box" v-if="place_id.length > 0">
               <div class="inner">
@@ -277,6 +277,8 @@ export default {
         .catch((error) => {
           console.log(error.messages);
         });
+      var section = document.getElementById("place_details");
+      section.scrollIntoView({ behavior: "smooth" });
     },
     addToTripEvents: function () {
       var params = {
