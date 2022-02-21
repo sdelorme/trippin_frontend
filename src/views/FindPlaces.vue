@@ -33,7 +33,7 @@
           </div>
         </form>
         <div>
-          <p>{{ message }}</p>
+          <p>{{ search_message }}</p>
         </div>
 
         <section>
@@ -156,6 +156,13 @@
                         <button v-if="place_id" class="button primary" @click="addToTripEvents()">Add to trip</button>
                       </li>
                     </ul>
+                    <div v-if="add_to_trip_message" class="box">
+                      <ul class="alt">
+                        <li>
+                          <b class="alt">{{ add_to_trip_message }}</b>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -183,7 +190,8 @@ export default {
       // type: "",
       place_id: "",
       next_page_token: "",
-      message: "",
+      search_message: "",
+      add_to_trip_message: "",
       search_status: false,
       need_previous_page: false,
       api_key: process.env.VUE_APP_MY_API_KEY,
@@ -288,18 +296,22 @@ export default {
         start: this.start_time,
         end: this.end_time,
       };
-      axios
-        .post("/api/trip_events/new", params)
-        .then((response) => {
-          console.log(params);
-          console.log(this.start_time);
-          console.log(this.end_time);
-          console.log("adding this to trip_events", response);
-          this.$router.push({ name: "Trip Events" });
-        })
-        .catch((error) => {
-          console.log(error.messages);
-        });
+      if (this.start_time) {
+        axios
+          .post("/api/trip_events/new", params)
+          .then((response) => {
+            console.log(params);
+            console.log(this.start_time);
+            console.log(this.end_time);
+            console.log("adding this to trip_events", response);
+            this.$router.push({ name: "Trip Events" });
+          })
+          .catch((error) => {
+            console.log(error.messages);
+          });
+      } else {
+        this.add_to_trip_message = "You must at least select a start time before adding to your trip!";
+      }
     },
   },
 };
