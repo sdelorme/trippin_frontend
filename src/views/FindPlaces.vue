@@ -277,6 +277,7 @@ export default {
         .catch((error) => {
           console.log(error.messages);
         });
+
       var section = document.getElementById("place_details");
       section.scrollIntoView({ behavior: "smooth" });
     },
@@ -306,7 +307,7 @@ export default {
             console.log(this.start_time);
             console.log(this.end_time);
             console.log("adding this to trip_events", response);
-            this.$router.push({ name: "Trip Events" });
+            // this.$router.push({ name: "Trip Events" });
           })
           .catch((error) => {
             console.log(error.messages);

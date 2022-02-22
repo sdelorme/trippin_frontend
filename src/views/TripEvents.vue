@@ -2,7 +2,7 @@
   <div id="wrapper">
     <div id="main">
       <div class="inner">
-        <h1>My Trip Events</h1>
+        <h1>My Current Trip Events</h1>
         <div class="table-wrapper">
           <table class="alt">
             <thead>
@@ -45,6 +45,25 @@
             </tbody>
           </table>
         </div>
+        <form id="saveTrip" @submit.prevent="saveTrip()">
+          <div class="row gtr-uniform">
+            <div class="col-12 col-12-xsmall">
+              <strong>Want to save this trip? Add a name below and press save!</strong>
+              <input
+                type="text"
+                name="trip_name"
+                id="trip_name"
+                v-model="trip_name"
+                placeholder="Ex. Dive Bars In Chicago"
+              />
+            </div>
+            <div class="col-12">
+              <ul class="actions">
+                <li><input form="saveTrip" type="submit" class="primary" value="Save Trip" /></li>
+              </ul>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -58,6 +77,7 @@ export default {
   data: function () {
     return {
       trip_events: [],
+      trip_name: "",
     };
   },
   created: function () {
@@ -73,6 +93,22 @@ export default {
         console.log("deleted trip event", response);
         window.location.reload();
       });
+    },
+    saveTrip: function () {
+      var params = {
+        user_id: localStorage.getItem("user_id"),
+        trip_name: this.trip_name,
+        trip_events: this.trip_events,
+      };
+      axios
+        .post("api/saved_trips/new", params)
+        .then((response) => {
+          console.log("adding to saved trips", response);
+          this.$router.push({ name: "Saved Trips" });
+        })
+        .catch((error) => {
+          console.log(error.messages);
+        });
     },
   },
 };
