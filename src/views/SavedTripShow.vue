@@ -6,7 +6,7 @@
         <div class="col-12">
           <ul class="actions">
             <li>
-              <router-link to="/saved_trips" tag="button">Back to Saved Trips</router-link>
+              <router-link to="/saved_trips"><button class="primary">Back to Saved Trips</button></router-link>
             </li>
           </ul>
         </div>
