@@ -58,7 +58,7 @@
             <a href="/findPlaces">
               <h2>Burlington, VT</h2>
               <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                <p>By far the best vacation you never knew about.</p>
               </div>
             </a>
           </article>
@@ -69,7 +69,7 @@
             <a href="/findPlaces">
               <h2>San Francisco</h2>
               <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                <p>Good food and some site seeing!.</p>
               </div>
             </a>
           </article>
@@ -80,7 +80,7 @@
             <a href="/findPlaces">
               <h2>Los Angeles</h2>
               <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                <p>Treat yo self in Hollywood!</p>
               </div>
             </a>
           </article>
@@ -91,7 +91,7 @@
             <a href="/findPlaces">
               <h2>Seattle</h2>
               <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                <p>Coffee, kayaking, and Pike Place Market!</p>
               </div>
             </a>
           </article>
@@ -102,7 +102,7 @@
             <a href="/findPlaces">
               <h2>Washington D.C.</h2>
               <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                <p>D.C. has some of the best brunch spots in the country.</p>
               </div>
             </a>
           </article>
@@ -113,7 +113,7 @@
             <a href="/findPlaces">
               <h2>Nashville</h2>
               <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                <p>Bach party?</p>
               </div>
             </a>
           </article>
@@ -124,7 +124,7 @@
             <a href="/findPlaces">
               <h2>Charleston</h2>
               <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                <p>Good seafood and beach vibes await.</p>
               </div>
             </a>
           </article>
@@ -135,7 +135,7 @@
             <a href="/findPlaces">
               <h2>Atlanta</h2>
               <div class="content">
-                <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                <p>ATL will not dissapoint -- this list is NOT big enough!</p>
               </div>
             </a>
           </article>
