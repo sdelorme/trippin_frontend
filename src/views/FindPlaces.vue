@@ -135,7 +135,7 @@
                         </div>
                       </li>
                     </ul>
-                    <div class="table-wrapper">
+                    <div v-if="isLoggedIn()" class="table-wrapper">
                       <table class="alt">
                         <thead>
                           <th>Choose Start Time</th>
@@ -150,18 +150,37 @@
                           </tr>
                         </tbody>
                       </table>
-                    </div>
-                    <ul class="actions">
-                      <li>
-                        <button v-if="place_id" class="button primary" @click="addToTripEvents()">Add to trip</button>
-                      </li>
-                    </ul>
-                    <div v-if="add_to_trip_message" class="box">
-                      <ul class="alt">
+                      <ul class="actions">
                         <li>
-                          <b class="alt">{{ add_to_trip_message }}</b>
+                          <button v-if="place_id" class="button primary" @click="addToTripEvents()">Add to trip</button>
                         </li>
                       </ul>
+                      <div v-if="add_to_trip_message" class="box">
+                        <ul class="alt">
+                          <li>
+                            <b class="alt">{{ add_to_trip_message }}</b>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div v-else class="row gtr-uniform">
+                      <div class="col-12">
+                        <h4 style="text-align: center">
+                          Planning a trip? Signup or login to experience the app's full functionality
+                        </h4>
+                        <ul class="actions fit">
+                          <li>
+                            <router-link to="/signup">
+                              <button class="button primary fit">Signup</button>
+                            </router-link>
+                          </li>
+                          <li>
+                            <router-link to="/login">
+                              <button class="button primary fit">Login</button>
+                            </router-link>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -313,7 +332,15 @@ export default {
             console.log(error.messages);
           });
       } else {
-        this.add_to_trip_message = "You must at least select a start time before adding to your trip!";
+        this.add_to_trip_message = "You must select a start and end time before adding to your trip!";
+      }
+    },
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        console.log("logged in");
+        return true;
+      } else {
+        return false;
       }
     },
   },
