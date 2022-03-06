@@ -4,8 +4,15 @@
       <div class="inner">
         <header>
           <h1>Welcome to Trippin</h1>
-          <p>Insert description here</p>
+          <h3>How does it work?</h3>
+          <blockquote>
+            Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum
+            ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing
+            accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu
+            felis.
+          </blockquote>
         </header>
+        <hr />
         <section class="tiles">
           <article class="style1">
             <span class="image">
@@ -73,7 +80,7 @@
               </div>
             </a>
           </article>
-          <article class="style2">
+          <article class="style1">
             <span class="image">
               <img src="images/pic07.jpg" alt="" />
             </span>
@@ -84,7 +91,7 @@
               </div>
             </a>
           </article>
-          <article class="style3">
+          <article class="style2">
             <span class="image">
               <img src="images/pic08.jpg" alt="" />
             </span>
@@ -95,7 +102,7 @@
               </div>
             </a>
           </article>
-          <article class="style1">
+          <article class="style3">
             <span class="image">
               <img src="images/pic09.jpg" alt="" />
             </span>
@@ -106,7 +113,7 @@
               </div>
             </a>
           </article>
-          <article class="style5">
+          <article class="style4">
             <span class="image">
               <img src="images/pic10.jpg" alt="" />
             </span>
@@ -117,7 +124,7 @@
               </div>
             </a>
           </article>
-          <article class="style6">
+          <article class="style5">
             <span class="image">
               <img src="images/pic11.jpg" alt="" />
             </span>
@@ -128,7 +135,7 @@
               </div>
             </a>
           </article>
-          <article class="style4">
+          <article class="style6">
             <span class="image">
               <img src="images/pic12.jpg" alt="" />
             </span>
@@ -153,6 +160,15 @@ export default {
     return {};
   },
   created: function () {},
-  methods: {},
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        console.log("logged in");
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
 };
 </script>
