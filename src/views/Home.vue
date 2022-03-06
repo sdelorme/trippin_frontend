@@ -12,7 +12,49 @@
             felis.
           </blockquote>
         </header>
-        <hr />
+        <hr class="hr major" />
+        <div v-if="isLoggedIn()" class="box alt">
+          <div class="row gtr-uniform">
+            <div class="col-12">
+              <p style="text-align: center">
+                <strong>Welcome Back!</strong>
+              </p>
+              <ul class="actions fit stacked">
+                <li>
+                  <router-link to="/trip_events">
+                    <button class="button primary fit">My Current Trip</button>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/saved_trips">
+                    <button class="button primary fit">My Saved Trips</button>
+                  </router-link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div v-else class="box alt">
+          <div class="row gtr-uniform">
+            <div class="col-12">
+              <p style="text-align: center">
+                <strong>Planning a trip? Signup or login to experience the app's full functionality</strong>
+              </p>
+              <ul class="actions fit stacked">
+                <li>
+                  <router-link to="/signup">
+                    <button class="button primary fit">Signup</button>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/login">
+                    <button class="button primary fit">Login</button>
+                  </router-link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <section class="tiles">
           <article class="style1">
             <span class="image">
