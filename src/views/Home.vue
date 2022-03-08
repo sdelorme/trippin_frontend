@@ -16,9 +16,7 @@
         <div v-if="isLoggedIn()" class="box alt">
           <div class="row gtr-uniform">
             <div class="col-12">
-              <p style="text-align: center">
-                <strong>Welcome Back!</strong>
-              </p>
+              <h2 style="text-align: center">Welcome Back!</h2>
               <ul class="actions fit stacked">
                 <li>
                   <router-link to="/trip_events">
@@ -60,7 +58,7 @@
             <span class="image">
               <img src="images/pic01.jpg" alt="" />
             </span>
-            <a href="/findPlaces">
+            <a href="/saved_trips">
               <h2>Chicago</h2>
               <div class="content">
                 <p>A curated trip to Chicago's best dive bars!</p>
@@ -71,7 +69,7 @@
             <span class="image">
               <img src="images/pic02.jpg" alt="" />
             </span>
-            <a href="/findPlaces">
+            <a href="/saved_trips">
               <h2>New York City</h2>
               <div class="content">
                 <p>Planning a trip to New York? Find out what's good nearby</p>
@@ -82,7 +80,7 @@
             <span class="image">
               <img src="images/pic03.jpg" alt="" />
             </span>
-            <a href="/findPlaces">
+            <a href="/saved_trips">
               <h2>Ann Arbor</h2>
               <div class="content">
                 <p>Hail to the victors! Check out these local spots in A2.</p>
@@ -93,7 +91,7 @@
             <span class="image">
               <img src="images/pic04.jpg" alt="" />
             </span>
-            <a href="/findPlaces">
+            <a href="/saved_trips">
               <h2>Boston</h2>
               <div class="content">
                 <p>Seafood, good beer, and mudslides on the Cape will have you loving Bean Town.</p>
@@ -104,7 +102,7 @@
             <span class="image">
               <img src="images/pic05.jpg" alt="" />
             </span>
-            <a href="/findPlaces">
+            <a href="/saved_trips">
               <h2>Burlington, VT</h2>
               <div class="content">
                 <p>By far the best vacation you never knew about.</p>
@@ -115,7 +113,7 @@
             <span class="image">
               <img src="images/pic06.jpg" alt="" />
             </span>
-            <a href="/findPlaces">
+            <a href="/saved_trips">
               <h2>San Francisco</h2>
               <div class="content">
                 <p>Good food and some site seeing!.</p>
@@ -126,7 +124,7 @@
             <span class="image">
               <img src="images/pic07.jpg" alt="" />
             </span>
-            <a href="/findPlaces">
+            <a href="/saved_trips">
               <h2>Los Angeles</h2>
               <div class="content">
                 <p>Treat yo self in Hollywood!</p>
@@ -137,7 +135,7 @@
             <span class="image">
               <img src="images/pic08.jpg" alt="" />
             </span>
-            <a href="/findPlaces">
+            <a href="/saved_trips">
               <h2>Seattle</h2>
               <div class="content">
                 <p>Coffee, kayaking, and Pike Place Market!</p>
@@ -148,7 +146,7 @@
             <span class="image">
               <img src="images/pic09.jpg" alt="" />
             </span>
-            <a href="/findPlaces">
+            <a href="/saved_trips">
               <h2>Washington D.C.</h2>
               <div class="content">
                 <p>D.C. has some of the best brunch spots in the country.</p>
@@ -159,7 +157,7 @@
             <span class="image">
               <img src="images/pic10.jpg" alt="" />
             </span>
-            <a href="/findPlaces">
+            <a href="/saved_trips">
               <h2>Nashville</h2>
               <div class="content">
                 <p>Bach party?</p>
@@ -170,7 +168,7 @@
             <span class="image">
               <img src="images/pic11.jpg" alt="" />
             </span>
-            <a href="/findPlaces">
+            <a href="/saved_trips">
               <h2>Charleston</h2>
               <div class="content">
                 <p>Good seafood and beach vibes await.</p>
@@ -181,7 +179,7 @@
             <span class="image">
               <img src="images/pic12.jpg" alt="" />
             </span>
-            <a href="/findPlaces">
+            <a href="/saved_trips">
               <h2>Atlanta</h2>
               <div class="content">
                 <p>ATL will not dissapoint -- this list is NOT big enough!</p>
