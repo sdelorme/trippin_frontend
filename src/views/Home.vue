@@ -58,7 +58,7 @@
             <span class="image">
               <img src="images/pic01.jpg" alt="" />
             </span>
-            <a href="/saved_trips">
+            <a href="/chicago">
               <h2>Chicago</h2>
               <div class="content">
                 <p>A curated trip to Chicago's best dive bars!</p>
