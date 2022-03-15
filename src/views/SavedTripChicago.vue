@@ -2,11 +2,11 @@
   <div id="wrapper">
     <div id="main">
       <div class="inner">
-        <h1>{{ saved_trip.trip_name }}</h1>
+        <h1>Dive Bars of Chicago</h1>
         <div class="col-12">
           <ul class="actions">
             <li>
-              <router-link to="/saved_trips"><button class="primary">Back to Saved Trips</button></router-link>
+              <router-link to="/"><button class="primary">Back to Home</button></router-link>
             </li>
           </ul>
         </div>
@@ -48,19 +48,19 @@
 <style></style>
 
 <script>
-// import axios from "axios";
-// export default {
-//   data: function () {
-//     return {
-//       saved_trip: [],
-//     };
-//   },
-//   created: function () {
-//     axios.get("/api/chicago").then((response) => {
-//       console.log("Chicago preset", response);
-//       this.saved_trip = response.data;
-//     });
-//   },
-//   methods: {},
-// };
+import axios from "axios";
+export default {
+  data: function () {
+    return {
+      saved_trip: [],
+    };
+  },
+  created: function () {
+    axios.get("/api/chicago").then((response) => {
+      console.log("Chicago preset", response);
+      this.saved_trip = response.data;
+    });
+  },
+  methods: {},
+};
 </script>
