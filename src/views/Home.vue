@@ -72,7 +72,7 @@
             <a href="/saved_trips">
               <h2>New York City</h2>
               <div class="content">
-                <p>Planning a trip to New York? Find out what's good nearby</p>
+                <p>Planning a trip to New York? Here's some touristy stuff!</p>
               </div>
             </a>
           </article>

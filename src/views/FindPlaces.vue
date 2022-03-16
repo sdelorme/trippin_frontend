@@ -162,6 +162,15 @@
                           </li>
                         </ul>
                       </div>
+                      <div class="col-12">
+                        <ul class="actions">
+                          <li class="primary">
+                            <router-link to="/trip_events">
+                              <button class="primary">Take me to my current trip!</button>
+                            </router-link>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                     <div v-else class="row gtr-uniform">
                       <div class="col-12">

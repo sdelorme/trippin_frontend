@@ -3,7 +3,8 @@
     <div id="main">
       <div class="inner">
         <h1>My Current Trip Events</h1>
-        <div class="table-wrapper">
+        <!-- <div v-if="trip_events.count === 0">No trip events</div> -->
+        <div v-if="trip_events.length" class="table-wrapper">
           <table class="alt">
             <thead>
               <tr>
@@ -44,6 +45,16 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div v-else>
+          <p>No trip events have been added yet.</p>
+          <div class="col-12">
+            <ul class="actions">
+              <li class="primary">
+                <router-link to="/findPlaces"><button class="secondary">Find places to add!</button></router-link>
+              </li>
+            </ul>
+          </div>
         </div>
         <form id="saveTrip" @submit.prevent="saveTrip()">
           <div class="row gtr-uniform">
