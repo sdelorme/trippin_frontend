@@ -10,6 +10,7 @@ import SavedTripShow from "../views/SavedTripShow.vue";
 import SavedTripChicago from "../views/SavedTripChicago.vue";
 import SavedTripNYC from "../views/SavedTripNYC.vue";
 import SavedTripAnnArbor from "../views/SavedTripAnnArbor.vue";
+import SavedTripBoston from "../views/SavedTripBoston.vue";
 import FindPlaces from "../views/FindPlaces.vue";
 
 Vue.use(VueRouter);
@@ -27,6 +28,7 @@ const routes = [
   { path: "/chicago", name: "Saved Trips Chicago", component: SavedTripChicago },
   { path: "/nyc", name: "Saved Trips NYC", component: SavedTripNYC },
   { path: "/ann_arbor", name: "Saved Trips Ann Arbor", component: SavedTripAnnArbor },
+  { path: "/boston", name: "Saved Trips Boston", component: SavedTripBoston },
   { path: "/signup", name: "signup", component: Signup },
   { path: "/login", name: "login", component: Login },
   { path: "/logout", name: "logout", component: Logout },

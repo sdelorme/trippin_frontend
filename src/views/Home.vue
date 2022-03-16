@@ -91,10 +91,10 @@
             <span class="image">
               <img src="images/pic04.jpg" alt="" />
             </span>
-            <a href="/saved_trips">
+            <a href="/boston">
               <h2>Boston</h2>
               <div class="content">
-                <p>Seafood, good beer, and mudslides on the Cape will have you loving Bean Town.</p>
+                <p>Quick stop in Boston!</p>
               </div>
             </a>
           </article>
