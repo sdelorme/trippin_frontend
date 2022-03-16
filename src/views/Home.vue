@@ -69,7 +69,7 @@
             <span class="image">
               <img src="images/pic02.jpg" alt="" />
             </span>
-            <a href="/saved_trips">
+            <a href="/nyc">
               <h2>New York City</h2>
               <div class="content">
                 <p>Planning a trip to New York? Here's some touristy stuff!</p>
@@ -80,7 +80,7 @@
             <span class="image">
               <img src="images/pic03.jpg" alt="" />
             </span>
-            <a href="/saved_trips">
+            <a href="/ann_arbor">
               <h2>Ann Arbor</h2>
               <div class="content">
                 <p>Hail to the victors! Check out these local spots in A2.</p>
