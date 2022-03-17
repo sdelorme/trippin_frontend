@@ -102,7 +102,7 @@
             <span class="image">
               <img src="images/pic05.jpg" alt="" />
             </span>
-            <a href="/saved_trips">
+            <a href="/burlington">
               <h2>Burlington, VT</h2>
               <div class="content">
                 <p>By far the best vacation you never knew about.</p>
