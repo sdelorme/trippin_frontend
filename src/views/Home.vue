@@ -113,7 +113,7 @@
             <span class="image">
               <img src="images/pic06.jpg" alt="" />
             </span>
-            <a href="/saved_trips">
+            <a href="/san_francisco">
               <h2>San Francisco</h2>
               <div class="content">
                 <p>Good food and some site seeing!.</p>
