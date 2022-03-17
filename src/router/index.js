@@ -5,7 +5,7 @@ import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import TripEvents from "../views/TripEvents.vue";
-import SavedTrips from "../views/SavedTrips.vue";
+import SavedTripsIndex from "../views/SavedTripsIndex.vue";
 import SavedTripShow from "../views/SavedTripShow.vue";
 import SavedTripChicago from "../views/SavedTripChicago.vue";
 import SavedTripNYC from "../views/SavedTripNYC.vue";
@@ -25,7 +25,7 @@ const routes = [
   },
   { path: "/findPlaces", name: "Find Places", component: FindPlaces },
   { path: "/trip_events", name: "Trip Events", component: TripEvents },
-  { path: "/saved_trips", name: "Saved Trips", component: SavedTrips },
+  { path: "/saved_trips", name: "Saved Trips Index", component: SavedTripsIndex },
   { path: "/saved_trips/:id", name: "Saved Trips Show", component: SavedTripShow },
   { path: "/chicago", name: "Saved Trips Chicago", component: SavedTripChicago },
   { path: "/nyc", name: "Saved Trips NYC", component: SavedTripNYC },

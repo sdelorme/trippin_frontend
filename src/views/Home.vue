@@ -6,10 +6,10 @@
           <h1>Welcome to Trippin</h1>
           <h3>How does it work?</h3>
           <blockquote>
-            Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum
-            ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing
-            accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu
-            felis.
+            Trippin' is an app created to help plan itineraries when traveling or a tool to find the best attractions
+            within your own city! Built with Ruby on Rails and VueJs and seamlessly integrated with the Google Places
+            API. The app features preset "trip attractions" and the ability to search for new places wherever you (and
+            Google) are going! You can also save your own "trips" for later. Enjoy!
           </blockquote>
         </header>
         <hr class="hr major" />
