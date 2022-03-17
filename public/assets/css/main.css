@@ -426,6 +426,7 @@ hr.major {
   flex-wrap: wrap;
   box-sizing: border-box;
   align-items: stretch;
+  word-wrap: break-word;
 }
 
 .row > * {
@@ -434,6 +435,7 @@ hr.major {
 
 .row.gtr-uniform > * > :last-child {
   margin-bottom: 0;
+  word-wrap: break-word;
 }
 
 .row.aln-left {
@@ -2408,14 +2410,17 @@ input[type="radio"] + label:before {
   background-color: transparent;
   box-shadow: inset 0 0 0 2px #585858;
   color: #585858 !important;
-  /* display: inline-block; */
+  position: relative;
   font-size: 1em;
   /* font-weight: 900; */
   /* letter-spacing: 0.35em; */
-  text-align: left;
+  text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  /* white-space: nowrap; */
+  /* word-wrap: normal; */
+  overflow-wrap: break-word;
+  /* word-wrap: break-word; */
 }
 
 .box > :last-child,

@@ -12,8 +12,8 @@
             Google) are going! You can also save your own "trips" for later. Enjoy!
           </blockquote>
         </header>
-        <hr class="hr major" />
-        <div v-if="isLoggedIn()" class="box alt">
+        <br />
+        <div v-if="isLoggedIn()" class="box">
           <div class="row gtr-uniform">
             <div class="col-12">
               <h2 style="text-align: center">Welcome Back!</h2>
@@ -32,12 +32,15 @@
             </div>
           </div>
         </div>
-        <div v-else class="box alt">
+        <div v-else class="box">
+          <p>
+            <strong>
+              Planning a trip? Signup or login to experience the app's full functionality. Just looking for some great
+              sushi nearby? Click the "Find Places" tab below.
+            </strong>
+          </p>
           <div class="row gtr-uniform">
             <div class="col-12">
-              <p style="text-align: center">
-                <strong>Planning a trip? Signup or login to experience the app's full functionality</strong>
-              </p>
               <ul class="actions fit stacked">
                 <li>
                   <router-link to="/signup">
@@ -53,6 +56,7 @@
             </div>
           </div>
         </div>
+        <br />
         <section class="tiles">
           <article class="style1">
             <span class="image">
