@@ -4,59 +4,73 @@
       <div class="inner">
         <header>
           <h1>Welcome to Trippin</h1>
-          <h3>How does it work?</h3>
-          <blockquote>
-            Trippin' is an app created to help plan itineraries when traveling or a tool to find the best attractions
-            within your own city! Built with Ruby on Rails and VueJs and seamlessly integrated with the Google Places
-            API. The app features preset "trip attractions" and the ability to search for new places wherever you (and
-            Google) are going! You can also save your own "trips" for later. Enjoy!
-          </blockquote>
+          <section>
+            <div v-if="isLoggedIn()" class="box">
+              <div class="row gtr-uniform">
+                <div class="col-12">
+                  <h2 style="text-align: center">Welcome Back!</h2>
+                  <ul class="actions fit stacked">
+                    <li>
+                      <router-link to="/trip_events">
+                        <button class="button primary fit">My Current Trip</button>
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link to="/saved_trips">
+                        <button class="button primary fit">My Saved Trips</button>
+                      </router-link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div v-else class="box">
+              <p>
+                <strong>
+                  Planning a trip? Signup or login to experience the app's full functionality. Just looking for some
+                  great sushi nearby? Click the "Find Places" tab below.
+                </strong>
+              </p>
+              <div class="row gtr-uniform">
+                <div class="col-12">
+                  <ul class="actions fit stacked">
+                    <li>
+                      <router-link to="/signup">
+                        <button class="button primary fit">Signup</button>
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link to="/login">
+                        <button class="button primary fit">Login</button>
+                      </router-link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
         </header>
-        <br />
-        <div v-if="isLoggedIn()" class="box">
-          <div class="row gtr-uniform">
-            <div class="col-12">
-              <h2 style="text-align: center">Welcome Back!</h2>
-              <ul class="actions fit stacked">
-                <li>
-                  <router-link to="/trip_events">
-                    <button class="button primary fit">My Current Trip</button>
-                  </router-link>
-                </li>
-                <li>
-                  <router-link to="/saved_trips">
-                    <button class="button primary fit">My Saved Trips</button>
-                  </router-link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div v-else class="box">
-          <p>
-            <strong>
-              Planning a trip? Signup or login to experience the app's full functionality. Just looking for some great
-              sushi nearby? Click the "Find Places" tab below.
-            </strong>
-          </p>
-          <div class="row gtr-uniform">
-            <div class="col-12">
-              <ul class="actions fit stacked">
-                <li>
-                  <router-link to="/signup">
-                    <button class="button primary fit">Signup</button>
-                  </router-link>
-                </li>
-                <li>
-                  <router-link to="/login">
-                    <button class="button primary fit">Login</button>
-                  </router-link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <br />
+        <hr />
+        <h3>How does it work?</h3>
+        <section class="tiles">
+          <article class="image fit">
+            <span class="image">
+              <img src="images/homepage.png" alt="" />
+            </span>
+            <a>
+              <div class="content">
+                <blockquote>
+                  Trippin' is an app created to help plan itineraries when traveling or a tool to find the best
+                  attractions within your own city! Built with Ruby on Rails and VueJs and seamlessly integrated with
+                  the Google Places API. The app features preset "trip attractions" and the ability to search for new
+                  places wherever you (and Google) are going! You can also save your own "trips" for later. Enjoy!
+                </blockquote>
+              </div>
+            </a>
+          </article>
+        </section>
+        <hr />
+        <h3>Check out some trip ideas below!</h3>
         <section class="tiles">
           <article class="style1">
             <span class="image">
