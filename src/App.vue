@@ -7,7 +7,7 @@
           <!-- Logo -->
           <a href="/" class="logo">
             <span class="symbol"><img src="images/logo.png" alt="" /></span>
-            <span class="title">Trippin</span>
+            <span class="title">Trippin'</span>
           </a>
 
           <!-- Nav -->
