@@ -36,22 +36,22 @@
           <p>{{ search_message }}</p>
         </div>
 
-        <section>
-          <div class="row gtr-uniform">
-            <div class="col-4" v-for="(place, i) in nearby_places" :key="i" @click="showPlaceDetails(i)">
-              <div class="box">
-                <span class="image fit">
-                  <ul class="alt">
-                    <li>{{ place.name }}</li>
-                    <li>Should be picture here</li>
-                    <li>Rating: {{ place.rating }}</li>
-                    <li>Number of Ratings: {{ place.user_ratings_total }}</li>
-                    <li>Address: {{ place.address }}</li>
-                  </ul>
-                </span>
+        <section class="tiles">
+          <article class="style7" v-for="(place, i) in nearby_places" :key="i" @click="showPlaceDetails(i)">
+            <span class="image">
+              <img src="images/pic01.jpg" alt="" />
+            </span>
+            <a>
+              <h2>{{ place.name }}</h2>
+              <h5>Rating: {{ place.rating }}</h5>
+              <div class="content">
+                <ul class="alt">
+                  <li>Number of Ratings: {{ place.user_ratings_total }}</li>
+                  <li><h3>Click for more info</h3></li>
+                </ul>
               </div>
-            </div>
-          </div>
+            </a>
+          </article>
         </section>
 
         <br />

@@ -370,11 +370,11 @@ blockquote {
   border-left: solid 4px black;
   font-style: italic;
   margin: 0;
-  padding: 0.5em 1.5em 0.5em 1.5em;
+  padding: 0 0.5em 0;
   font-size: 2em;
-  background-color: #f7f7f7;
-  color: black;
-  opacity: 0.7;
+  /* background-color: #f7f7f7; */
+  color: white;
+  /* opacity: 0.7; */
 }
 
 code {
@@ -2771,9 +2771,8 @@ button:disabled,
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 1;
+  opacity: 0.5;
   z-index: 1;
-  opacity: 0.75;
 }
 
 .tiles article > .image:after {
@@ -2830,6 +2829,7 @@ button:disabled,
   text-align: center;
   text-decoration: none;
   z-index: 3;
+  cursor: pointer;
 }
 
 .tiles article > a > :last-child {
@@ -2884,6 +2884,10 @@ button:disabled,
   background-color: #8499e7;
 }
 
+.tiles article.style7 > .image:before {
+  background-color: #2e8b57;
+}
+
 body:not(.is-touch) .tiles article:hover > .image {
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
@@ -2893,7 +2897,7 @@ body:not(.is-touch) .tiles article:hover > .image {
 
 body:not(.is-touch) .tiles article:hover > .image:before {
   background-color: #333333;
-  opacity: 0.35;
+  opacity: 0.75;
 }
 
 body:not(.is-touch) .tiles article:hover > .image:after {
