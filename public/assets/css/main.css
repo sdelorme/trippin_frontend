@@ -2684,6 +2684,15 @@ button.primary,
   background-color: #585858;
   color: #ffffff !important;
 }
+input[type="submit"].secondary,
+input[type="reset"].secondary,
+input[type="button"].secondary,
+button.secondary,
+.button.secondary {
+  box-shadow: none;
+  background-color: #32ce9a;
+  color: #504f4f !important;
+}
 
 input[type="submit"].primary:hover,
 input[type="reset"].primary:hover,

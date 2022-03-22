@@ -45,6 +45,30 @@
               </tr>
             </tbody>
           </table>
+          <form id="saveTrip" @submit.prevent="saveTrip()">
+            <div class="row gtr-uniform">
+              <div class="col-12 col-12-xsmall">
+                <strong>Want to save this trip? Add a name below and press save!</strong>
+                <input
+                  type="text"
+                  name="trip_name"
+                  id="trip_name"
+                  v-model="trip_name"
+                  placeholder="Ex. Dive Bars In Chicago"
+                />
+              </div>
+              <div class="col-12">
+                <ul class="actions">
+                  <li><input form="saveTrip" type="submit" class="primary" value="Save Trip" /></li>
+                  <li class="primary">
+                    <router-link to="/findPlaces">
+                      <button class="secondary">Find more places to add!</button>
+                    </router-link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </form>
         </div>
         <div v-else>
           <p>No trip events have been added yet.</p>
@@ -56,25 +80,6 @@
             </ul>
           </div>
         </div>
-        <form id="saveTrip" @submit.prevent="saveTrip()">
-          <div class="row gtr-uniform">
-            <div class="col-12 col-12-xsmall">
-              <strong>Want to save this trip? Add a name below and press save!</strong>
-              <input
-                type="text"
-                name="trip_name"
-                id="trip_name"
-                v-model="trip_name"
-                placeholder="Ex. Dive Bars In Chicago"
-              />
-            </div>
-            <div class="col-12">
-              <ul class="actions">
-                <li><input form="saveTrip" type="submit" class="primary" value="Save Trip" /></li>
-              </ul>
-            </div>
-          </div>
-        </form>
       </div>
     </div>
   </div>
