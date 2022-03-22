@@ -39,7 +39,10 @@
         <section class="tiles">
           <article class="style7" v-for="(place, i) in nearby_places" :key="i" @click="showPlaceDetails(i)">
             <span class="image">
-              <img src="images/pic01.jpg" alt="" />
+              <img
+                v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photo_reference=${place.photo_reference}&key=${api_key}`"
+                alt=""
+              />
             </span>
             <a>
               <h2>{{ place.name }}</h2>
@@ -284,8 +287,8 @@ export default {
     },
     showPlaceDetails: function (i) {
       this.place_id = this.nearby_places[i].place_id;
-      if (this.nearby_places[i].photos) {
-        this.photo_reference = this.nearby_places[i].photos[0]["photo_reference"];
+      if (this.nearby_places[i].photo_reference) {
+        this.photo_reference = this.nearby_places[i].photo_reference;
       } else {
         this.photo_reference =
           "Aap_uEA7vb0DDYVJWEaX3O-AtYp77AaswQKSGtDaimt3gt7QCNpdjp1BkdM6acJ96xTec3tsV_ZJNL_JP-lqsVxydG3nh739RE_hepOOL05tfJh2_ranjMadb3VoBYFvF0ma6S24qZ6QJUuV6sSRrhCskSBP5C1myCzsebztMfGvm7ij3gZT";
