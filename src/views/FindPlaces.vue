@@ -41,7 +41,7 @@
             <span class="image">
               <img
                 v-bind:src="`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photo_reference=${place.photo_reference}&key=${api_key}`"
-                alt=""
+                alt="No Image Found"
               />
             </span>
             <a>
@@ -228,18 +228,11 @@ export default {
       need_previous_page: false,
       api_key: process.env.VUE_APP_MY_API_KEY,
       errors: [],
-      date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().substr(0, 10),
-      selected_date: null,
-      date_status: false,
-      start_time: null,
-      end_time: null,
-      start_time_status: false,
-      end_time_status: false,
+      start_time: "2022-01-01T00:01",
+      end_time: "2022-01-01T00:01",
     };
   },
-  created: function () {
-    // this.nearbySearch();
-  },
+  created: function () {},
   methods: {
     nearbySearch: function () {
       var params = {
@@ -336,8 +329,8 @@ export default {
           .post("/api/trip_events/new", params)
           .then((response) => {
             console.log(params);
-            // console.log(this.start_time);
-            // console.log(this.end_time);
+            console.log(this.start_time);
+            console.log(this.end_time);
             console.log("adding this to trip_events", response);
             // this.$router.push({ name: "Trip Events" });
             this.add_to_trip_message = "Added to trip!";
