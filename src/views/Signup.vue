@@ -2,7 +2,7 @@
   <div id="wrapper">
     <div id="main">
       <div class="inner">
-        <h1>Signup</h1>
+        <h1>Create An Account</h1>
         <section>
           <form id="signup" @submit.prevent="submit()">
             <div class="row gtr-uniform">

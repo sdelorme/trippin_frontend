@@ -162,6 +162,7 @@
                           </li>
                         </ul>
                       </div>
+                      <br />
                       <div class="col-12">
                         <ul class="actions">
                           <li class="primary">
@@ -175,12 +176,12 @@
                     <div v-else class="row gtr-uniform">
                       <div class="col-12">
                         <h4 style="text-align: center">
-                          Planning a trip? Signup or login to experience the app's full functionality
+                          Planning a trip? Sign up or login to experience the app's full functionality
                         </h4>
                         <ul class="actions fit">
                           <li>
                             <router-link to="/signup">
-                              <button class="button primary fit">Signup</button>
+                              <button class="button primary fit">Sign Up</button>
                             </router-link>
                           </li>
                           <li>
@@ -332,10 +333,11 @@ export default {
           .post("/api/trip_events/new", params)
           .then((response) => {
             console.log(params);
-            console.log(this.start_time);
-            console.log(this.end_time);
+            // console.log(this.start_time);
+            // console.log(this.end_time);
             console.log("adding this to trip_events", response);
             // this.$router.push({ name: "Trip Events" });
+            this.add_to_trip_message = "Added to trip!";
           })
           .catch((error) => {
             console.log(error.messages);

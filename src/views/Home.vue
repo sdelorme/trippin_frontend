@@ -47,7 +47,7 @@
           <div v-else class="box">
             <p>
               <strong>
-                Planning a trip? Sign up or login to experience the app's full functionality. Just looking for some great
+                Planning a trip? Sign up or login to experience the app's full functionality. Just looking for some
                 sushi nearby? Click the "Find Places" tab below.
               </strong>
             </p>
