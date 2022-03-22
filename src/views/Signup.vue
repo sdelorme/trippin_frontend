@@ -39,6 +39,16 @@
             </div>
           </form>
         </section>
+        <div class="row gtr-uniform">
+          <div class="col-6 col-12-xsmall">
+            <br />
+            <p>
+              Already have an account? Log in by clicking
+              <a href="/login"><b class="alt">here</b></a>
+              .
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

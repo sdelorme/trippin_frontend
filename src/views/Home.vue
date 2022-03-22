@@ -47,7 +47,7 @@
           <div v-else class="box">
             <p>
               <strong>
-                Planning a trip? Signup or login to experience the app's full functionality. Just looking for some great
+                Planning a trip? Sign up or login to experience the app's full functionality. Just looking for some great
                 sushi nearby? Click the "Find Places" tab below.
               </strong>
             </p>
@@ -56,7 +56,7 @@
                 <ul class="actions fit stacked">
                   <li>
                     <router-link to="/signup">
-                      <button class="button primary fit">Signup</button>
+                      <button class="button primary fit">Sign Up</button>
                     </router-link>
                   </li>
                   <li>

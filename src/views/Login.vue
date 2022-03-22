@@ -17,8 +17,18 @@
               </div>
               <div class="col-12">
                 <ul class="actions">
-                  <li><input form="login" type="submit" class="primary" value="Submit" /></li>
+                  <li><input form="login" type="submit" class="primary" value="Login" /></li>
                 </ul>
+              </div>
+            </div>
+            <div class="row gtr-uniform">
+              <div class="col-6 col-12-xsmall">
+                <br />
+                <p>
+                  No account? Create an account by clicking
+                  <a href="/signup"><b class="alt">here</b></a>
+                  .
+                </p>
               </div>
             </div>
             <ul>
