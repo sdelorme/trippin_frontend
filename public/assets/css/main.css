@@ -2693,6 +2693,15 @@ button.secondary,
   background-color: #32ce9a;
   color: #504f4f !important;
 }
+input[type="submit"].warning,
+input[type="reset"].warning,
+input[type="button"].warning,
+button.warning,
+.button.warning {
+  box-shadow: none;
+  background-color: red;
+  color: #504f4f !important;
+}
 
 input[type="submit"].primary:hover,
 input[type="reset"].primary:hover,
@@ -2996,7 +3005,7 @@ body.is-touch .tiles article .content {
 
 #header {
   padding: 8em 0 0.1em 0;
-  background-color: inherit;
+  background-color: #f6fff8;
 }
 
 #header .logo {
@@ -3331,7 +3340,7 @@ body.is-menu-visible #menu .close {
 
 #footer {
   padding: 5em 0 6em 0;
-  background-color: #f6f6f6;
+  background-color: #eaf4f4;
 }
 
 #footer > .inner {

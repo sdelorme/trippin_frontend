@@ -29,7 +29,7 @@
           <li><router-link v-if="isLoggedIn()" to="/trip_events">My Current Trip Events</router-link></li>
           <li><router-link v-if="isLoggedIn()" to="/saved_trips">My Saved Trips</router-link></li>
           <li><router-link v-if="!isLoggedIn()" to="/signup">Sign Up</router-link></li>
-          <li><router-link v-if="!isLoggedIn()" to="/login">Login</router-link></li>
+          <li><router-link v-if="!isLoggedIn()" to="/login">Log In</router-link></li>
           <li><router-link v-if="isLoggedIn()" to="/logout">Logout</router-link></li>
         </ul>
       </div>

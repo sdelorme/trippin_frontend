@@ -6,7 +6,7 @@
         <div v-for="event in saved_trips" :key="event.id">
           <article class="box">
             <router-link v-bind:to="`/saved_trips/${event.id}`">
-              <p>{{ event.trip_name }}</p>
+              <strong>{{ event.trip_name }}</strong>
             </router-link>
           </article>
         </div>
