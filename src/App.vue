@@ -28,7 +28,6 @@
           <li><router-link to="/findPlaces">Find Places</router-link></li>
           <li><router-link v-if="isLoggedIn()" to="/trip_events">My Current Trip Events</router-link></li>
           <li><router-link v-if="isLoggedIn()" to="/saved_trips">My Saved Trips</router-link></li>
-          <li><router-link v-if="!isLoggedIn()" to="/signup">Sign Up</router-link></li>
           <li><router-link v-if="!isLoggedIn()" to="/login">Log In</router-link></li>
           <li><router-link v-if="isLoggedIn()" to="/logout">Logout</router-link></li>
         </ul>
@@ -77,10 +76,10 @@
           </ul>
         </section>
         <ul class="copyright">
-          <li>&copy; Untitled. All rights reserved</li>
+          <li>&copy; Trippin'. All rights reserved</li>
           <li>
             Design:
-            <a href="http://html5up.net">HTML5 UP</a>
+            <a href="https://html5up.net/phantom">Adapted from HTML5 UP - "Phantom"</a>
           </li>
         </ul>
       </div>
