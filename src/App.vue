@@ -48,7 +48,7 @@
               </a>
             </li>
             <li>
-              <a href="www.linkedin.com/in/seth-delorme" class="icon brands style2 fa-linkedin">
+              <a href="https://www.linkedin.com/in/seth-delorme/" class="icon brands style2 fa-linkedin">
                 <span class="label">LinkedIn</span>
               </a>
             </li>
