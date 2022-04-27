@@ -120,7 +120,7 @@ export default {
         .post("api/saved_trips/new", params)
         .then((response) => {
           console.log("adding to saved trips", response);
-          this.$router.push({ name: "Saved Trips" });
+          this.$router.push({ name: "Saved Trips Index" });
         })
         .catch((error) => {
           console.log(error.messages);
