@@ -18,8 +18,8 @@
                     <strong>{{ event.trip_name }}</strong>
                   </router-link>
                 </td>
-                <td>
-                  <button class="button warning small fit" @click="deleteSavedTrip(i)">Delete This Trip</button>
+                <td width="10%">
+                  <button class="button warning small fit" @click="deleteSavedTrip(i)">Delete</button>
                 </td>
               </tr>
             </tbody>

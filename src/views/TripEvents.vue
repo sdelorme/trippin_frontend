@@ -35,12 +35,8 @@
                 <td>
                   {{ event.end }}
                 </td>
-                <td>
-                  <ul class="actions">
-                    <li>
-                      <input type="submit" class="primary" value="Delete" @click="deleteTripEvent(event)" />
-                    </li>
-                  </ul>
+                <td width="10%">
+                  <button class="button warning small" @click="deleteTripEvent(event)">Delete</button>
                 </td>
               </tr>
             </tbody>

@@ -2704,6 +2704,14 @@ button.warning,
   color: white !important;
 }
 
+input[type="submit"].warning:hover,
+input[type="reset"].warning:hover,
+input[type="button"].warning:hover,
+button.warning:hover,
+.button.warning:hover {
+  background-color: black;
+}
+
 input[type="submit"].primary:hover,
 input[type="reset"].primary:hover,
 input[type="button"].primary:hover,
