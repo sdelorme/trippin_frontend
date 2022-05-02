@@ -139,7 +139,7 @@
                       </li>
                     </ul>
                     <div v-if="isLoggedIn()" class="table-wrapper">
-                      <table class="alt">
+                      <!-- <table class="alt">
                         <thead>
                           <th>Choose Start Time</th>
                           <th>Choose End Time</th>
@@ -152,7 +152,7 @@
                             <td><input type="datetime-local" id="end_time" name="end_time" v-model="end_time" /></td>
                           </tr>
                         </tbody>
-                      </table>
+                      </table> -->
                       <ul class="actions">
                         <li>
                           <button v-if="place_id" class="button primary" @click="addToTripEvents()">Add to trip</button>

@@ -6,20 +6,21 @@ import axios from "axios";
 axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/";
 
-// #trying to redirect user to login page when 401 error occurs
-// axios.interceptors.response.use(
-//   (response) => {
-//     console.log("response status", response.status);
-//     return response;
-//   },
-//   (error) => {
-//     if (error.response.status === 401) {
-//       console.log("error status is".error.response.status);
-//       router.push("/login");
-//     }
-//     return Promise.reject(error);
-//   }
-// );
+//globally intercept 401 unauthorized error, logs user out by removing JWT, and reroutes to login page, hoping this is most efficient way, requires authenticating user on back end as well
+axios.interceptors.response.use(
+  function (response) {
+    return response;
+  },
+  function (error) {
+    if (401 === error.response.status) {
+      delete axios.defaults.headers.common["Authorization"];
+      localStorage.removeItem("jwt");
+      router.push("/login");
+    } else {
+      return Promise.reject(error);
+    }
+  }
+);
 
 var jwt = localStorage.getItem("jwt");
 if (jwt) {
