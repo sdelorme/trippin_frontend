@@ -78,7 +78,6 @@
 <script>
 export default {
   name: "App",
-  created: function () {},
   methods: {
     isLoggedIn: function () {
       if (localStorage.getItem("jwt")) {
@@ -91,16 +90,6 @@ export default {
     getUserId: function () {
       return localStorage.getItem("user_id");
     },
-    // autoLogout: function () {
-    //   axios.catch((error) => {
-    //     if (error.status === 401) {
-    //       console.log("logging out, no jwt");
-    //       delete axios.defaults.headers.common["Authorization"];
-    //       localStorage.removeItem("jwt");
-    //       this.$router.push("/");
-    //     }
-    //   });
-    // },
   },
 };
 </script>
