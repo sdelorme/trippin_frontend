@@ -2533,6 +2533,7 @@ table td {
   padding: 0.75em 0.75em;
   text-align: center;
   vertical-align: middle;
+  line-height: 150%;
 }
 
 table th {
@@ -2559,6 +2560,12 @@ table.alt th {
   font-size: 1.25em;
   font-weight: 500;
   padding: 0.75em 0.75em 0.75em 0.75em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+table.alt td {
+  padding: 0.75em 0.75em;
   text-align: center;
   vertical-align: middle;
 }

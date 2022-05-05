@@ -2,7 +2,7 @@
   <div id="wrapper">
     <div id="main">
       <div class="inner">
-        <h1>My Current Trip Events</h1>
+        <h1>My Current Trip</h1>
         <!-- <div v-if="trip_events.count === 0">No trip events</div> -->
         <div v-if="trip_events.length" class="table-wrapper">
           <table class="alt">
@@ -31,16 +31,26 @@
                 </td>
                 <td>
                   {{ event.start }}
+                  <br />
+                   <input type="datetime-local" id="start_time" name="start_time" v-model="event.start" />
                 </td>
                 <td>
                   {{ event.end }}
+                  <br />
+                  <input type="datetime-local" id="end_time" name="end_time" v-model="event.end" />
                 </td>
                 <td width="10%">
+                  <button class="button small" @click="updateTripEvent(event)">Update Time</button>
                   <button class="button warning small" @click="deleteTripEvent(event)">Delete</button>
                 </td>
               </tr>
             </tbody>
           </table>
+          <ul class="actions">
+            <li>
+              <button class="primary">THIS BUTTON WILL TAKE TO EDIT PAGE TO CHANGE DATE</button>
+            </li>
+          </ul>
           <form id="saveTrip" @submit.prevent="saveTrip()">
             <div class="row gtr-uniform">
               <div class="col-12 col-12-xsmall">
@@ -90,6 +100,8 @@ export default {
     return {
       trip_events: [],
       trip_name: "",
+      start_time: "",
+      end_time: "",
     };
   },
   created: function () {
@@ -103,6 +115,17 @@ export default {
       console.log(event.id);
       axios.delete("api/trip_events/" + event.id).then((response) => {
         console.log("deleted trip event", response);
+        window.location.reload();
+      });
+    },
+    updateTripEvent: function (event) {
+      console.log(event.id);
+      var params = {
+        start: event.start,
+        end: event.end,
+      }
+      axios.patch("api/trip_events/" + event.id, params).then((response) => {
+        console.log("update trip event", response);
         window.location.reload();
       });
     },
