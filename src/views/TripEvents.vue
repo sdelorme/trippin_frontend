@@ -3,6 +3,15 @@
     <div id="main">
       <div class="inner">
         <h1>My Current Trip</h1>
+        <p>
+          Here is the trip you are currently planning. If you would like to create a schedule, adjust the start and end
+          time of each event. Make sure to press update after choosing a date and time. Current functionality will only
+          allow to update one date/time at once - so update one event at a time.
+        </p>
+        <p>
+          Not using this as a scheduled itinerary? No problem, just ignore the Start Time and End Time features and save
+          your trip.
+        </p>
         <!-- <div v-if="trip_events.count === 0">No trip events</div> -->
         <div v-if="trip_events.length" class="table-wrapper">
           <table class="alt">
@@ -32,7 +41,7 @@
                 <td>
                   {{ event.start }}
                   <br />
-                   <input type="datetime-local" id="start_time" name="start_time" v-model="event.start" />
+                  <input type="datetime-local" id="start_time" name="start_time" v-model="event.start" />
                 </td>
                 <td>
                   {{ event.end }}
@@ -46,11 +55,9 @@
               </tr>
             </tbody>
           </table>
-          <ul class="actions">
-            <li>
-              <button class="primary">THIS BUTTON WILL TAKE TO EDIT PAGE TO CHANGE DATE</button>
-            </li>
-          </ul>
+          <button class="button warning small" @click="deleteAllTripEvents()">Delete All Trip Events</button>
+          <br />
+          <br />
           <form id="saveTrip" @submit.prevent="saveTrip()">
             <div class="row gtr-uniform">
               <div class="col-12 col-12-xsmall">
@@ -123,7 +130,7 @@ export default {
       var params = {
         start: event.start,
         end: event.end,
-      }
+      };
       axios.patch("api/trip_events/" + event.id, params).then((response) => {
         console.log("update trip event", response);
         window.location.reload();
@@ -140,6 +147,20 @@ export default {
         .then((response) => {
           console.log("adding to saved trips", response);
           this.$router.push({ name: "Saved Trips Index" });
+        })
+        .catch((error) => {
+          console.log(error.messages);
+        });
+    },
+    deleteAllTripEvents: function () {
+      var params = {
+        user_id: localStorage.getItem("user_id"),
+      };
+      axios
+        .delete("api/trip_events", params)
+        .then((response) => {
+          console.log("deleting all trip events", response);
+          window.location.reload();
         })
         .catch((error) => {
           console.log(error.messages);
