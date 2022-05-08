@@ -36,7 +36,7 @@
           <p>{{ search_message }}</p>
         </div>
 
-        <section class="tiles">
+        <section class="tiles" id="search_results">
           <article class="style7" v-for="(place, i) in nearby_places" :key="i" @click="showPlaceDetails(i)">
             <span class="image">
               <img
@@ -265,6 +265,7 @@ export default {
         });
     },
     showPlaceDetails: function (i) {
+      this.add_to_trip_message = "";
       this.place_id = this.nearby_places[i].place_id;
       if (this.nearby_places[i].photo_reference) {
         this.photo_reference = this.nearby_places[i].photo_reference;
@@ -320,6 +321,8 @@ export default {
             console.log("adding this to trip_events", response);
             // this.$router.push({ name: "Trip Events" });
             this.add_to_trip_message = "Added to trip!";
+            var section = document.getElementById("search_results");
+            section.scrollIntoView({ behavior: "smooth" });
           })
           .catch((error) => {
             console.log(error.messages);
