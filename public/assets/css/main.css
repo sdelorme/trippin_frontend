@@ -402,6 +402,12 @@ pre code {
   overflow-x: auto;
 }
 
+br.alt {
+  content: "";
+  margin: 2em;
+  display: block;
+  font-size: 24%;
+}
 hr {
   border: 0;
   border-bottom: solid 1px #c9c9c9;

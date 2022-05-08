@@ -50,6 +50,7 @@
                 </td>
                 <td width="10%">
                   <button class="button small" @click="updateTripEvent(event)">Update Time</button>
+                  <br class="alt" />
                   <button class="button warning small" @click="deleteTripEvent(event)">Delete</button>
                 </td>
               </tr>
