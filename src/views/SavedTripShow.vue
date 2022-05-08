@@ -3,6 +3,7 @@
     <div id="main">
       <div class="inner">
         <h1>{{ saved_trip.trip_name }}</h1>
+        <p>Look back at this trip to see where you visited. Never gonna need this list again? Delete it.</p>
         <div class="col-12">
           <ul class="actions">
             <li>

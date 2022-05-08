@@ -3,6 +3,7 @@
     <div id="main">
       <div class="inner">
         <h1>My Saved Trips</h1>
+        <p>Here you can find all of the trips that you've saved.</p>
         <div class="table-wrapper">
           <table class="alt">
             <thead>
@@ -24,6 +25,11 @@
               </tr>
             </tbody>
           </table>
+          <div class="row aln-center">
+            <router-link to="/trip_events">
+              <button class="primary">Take me the current trip I'm planning!</button>
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
