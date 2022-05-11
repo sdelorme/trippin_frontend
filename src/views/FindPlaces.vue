@@ -3,7 +3,13 @@
     <div id="main">
       <div class="inner">
         <h1>Nearby Places</h1>
-        <form id="nearbySearch" v-on:submit.prevent="nearbySearch()">
+        <p>
+          Welcome to the "Nearby Places" page. This page is seamlessly linked to the Google Places API -- if it's on
+          Google, it's on here. Simply enter an exact or approximate address or city name and whatever you are looking
+          for. Trippin' will return up to 20 search results related to your search on each page (40 total). Don't see
+          what you are looking for? Try searching with a more precise address or exact name.
+        </p>
+        <form id="nearbySearch" @submit.prevent="nearbySearch()">
           <div class="row gtr-uniform">
             <div class="col-12 col-12-xsmall">
               <strong>Enter Address:</strong>
@@ -33,7 +39,9 @@
           </div>
         </form>
         <div>
-          <p>{{ search_message }}</p>
+          <p>
+            <b class="alt">{{ search_message }}</b>
+          </p>
         </div>
 
         <section class="tiles" id="search_results">
@@ -221,31 +229,36 @@ export default {
   created: function () {},
   methods: {
     nearbySearch: function () {
-      var params = {
-        address: this.address,
-        keyword: encodeURIComponent(this.keyword),
-        // type: this.type,
-        next_page_token: this.next_page_token,
-      };
-      axios
-        .get("/api/places/nearby_search", { params })
-        .then((response) => {
-          if (response.data.length > 0) {
-            console.log(params);
-            console.log("next_page_token", response.data[0]["next_page_token"]);
-            console.log("nearby search", response.data);
-            this.search_status = true;
-            console.log("search_status", this.search_status);
-            this.nearby_places = response.data;
-            this.next_page_token = response.data[0]["next_page_token"];
-            this.need_previous_page = false;
-          } else {
-            this.message = "No results, try broadening your keyword search.";
-          }
-        })
-        .catch((error) => {
-          console.log(error.messages);
-        });
+      if (!this.address || !this.keyword) {
+        this.search_message = "Enter an address or city name and keyword";
+      } else {
+        var params = {
+          address: this.address,
+          keyword: encodeURIComponent(this.keyword),
+          // type: this.type,
+          next_page_token: this.next_page_token,
+        };
+        axios
+          .get("/api/places/nearby_search", { params })
+          .then((response) => {
+            if (response.data.length > 0) {
+              console.log(params);
+              // console.log("next_page_token", response.data[0]["next_page_token"]);
+              console.log("nearby search", response.data);
+              this.search_status = true;
+              console.log("search_status", this.search_status);
+              this.nearby_places = response.data;
+              this.next_page_token = response.data[0]["next_page_token"];
+              this.need_previous_page = false;
+              this.search_message = "Click on an image below for more information.";
+            } else {
+              this.search_message = "No results, try broadening your keyword search.";
+            }
+          })
+          .catch((error) => {
+            console.log(error.messages);
+          });
+      }
     },
     nearbySearchNextPage: function () {
       var params = {
