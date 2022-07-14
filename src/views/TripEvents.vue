@@ -6,11 +6,16 @@
         <p>
           Here is the trip you are currently planning. If you would like to create a schedule, adjust the start and end
           time of each event. Make sure to press update after choosing a date and time. Current functionality will only
-          allow to update one date/time at once - so update one event at a time.
+          allow to update update one event at a time.
         </p>
         <p>
           Not using this as a scheduled itinerary? No problem, just ignore the Start Time and End Time features and save
           your trip.
+        </p>
+        <p>
+          If you are using this as a scheduled itinerary, keep adding places until you are all planned out. Once you are
+          finished with your trip, press "Save Trip" if you want to reference these places in the future. Once you save
+          your trip, all current trip events will be cleared.
         </p>
         <!-- <div v-if="trip_events.count === 0">No trip events</div> -->
         <div v-if="trip_events.length" class="table-wrapper">
@@ -56,10 +61,19 @@
               </tr>
             </tbody>
           </table>
-          <button class="button warning small" @click="deleteAllTripEvents()">Delete All Trip Events</button>
-          <br />
-          <br />
-          <form id="saveTrip" @submit.prevent="saveTrip()">
+          <div class="col-12">
+            <ul class="actions">
+              <li class="primary">
+                <router-link to="/findPlaces">
+                  <button class="secondary">Find more places to add!</button>
+                </router-link>
+              </li>
+              <li>
+                <button class="button warning" @click="deleteAllTripEvents()">Delete All Trip Events</button>
+              </li>
+            </ul>
+          </div>
+          <form id="saveTrip" @submit.prevent="saveTrip(), deleteAllTripEvents()">
             <div class="row gtr-uniform">
               <div class="col-12 col-12-xsmall">
                 <strong>Want to save this trip? Add a name below and press save!</strong>
@@ -74,18 +88,13 @@
               <div class="col-12">
                 <ul class="actions">
                   <li><input form="saveTrip" type="submit" class="primary" value="Save Trip" /></li>
-                  <li class="primary">
-                    <router-link to="/findPlaces">
-                      <button class="secondary">Find more places to add!</button>
-                    </router-link>
-                  </li>
                 </ul>
               </div>
             </div>
           </form>
         </div>
         <div v-else>
-          <p>No trip events have been added yet.</p>
+          <p><b class="alt">No events have been added yet.</b></p>
           <div class="col-12">
             <ul class="actions">
               <li class="primary">
@@ -161,7 +170,7 @@ export default {
         .delete("api/trip_events", params)
         .then((response) => {
           console.log("deleting all trip events", response);
-          window.location.reload();
+          this.$router.push({ name: "Saved Trips Index" });
         })
         .catch((error) => {
           console.log(error.messages);

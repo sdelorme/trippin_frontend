@@ -12,7 +12,7 @@
               <img src="images/homepage.png" alt="" />
             </span>
             <a>
-              <div class="content">
+              <div @click="scrollToPresets()" class="content">
                 <blockquote>
                   Trippin' is an app created to help plan itineraries when traveling or a tool to find the best
                   attractions within your own city! Built with Ruby on Rails and VueJs and seamlessly integrated with
@@ -76,7 +76,7 @@
         </section>
         <hr />
         <h3>Check out some trip ideas below!</h3>
-        <section class="tiles">
+        <section id="preset_trips" class="tiles">
           <article class="style1">
             <span class="image">
               <img src="images/pic01.jpg" alt="" />
@@ -165,6 +165,10 @@ export default {
       } else {
         return false;
       }
+    },
+    scrollToPresets: function () {
+      var section = document.getElementById("preset_trips");
+      section.scrollIntoView({ behavior: "smooth" });
     },
   },
 };
