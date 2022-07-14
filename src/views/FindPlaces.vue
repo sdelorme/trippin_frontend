@@ -155,8 +155,8 @@
                       <div class="col-12">
                         <select v-model="selected_trip" id="saved_trip_name">
                           <option value="">-- Current Trip --</option>
-                          <option v-for="trips in saved_trips" v-bind:value="trips.id" :key="trips.id">
-                            {{ trips.trip_name }}
+                          <option v-for="trip in saved_trips" v-bind:value="trip.id" :key="trip.id">
+                            {{ trip.trip_name }}
                           </option>
                         </select>
                       </div>
@@ -340,35 +340,35 @@ export default {
         start: this.start_time,
         end: this.end_time,
       };
-      // if (this.selected_trip) {
-      //   axios
-      //     .patch("/api/saved_trips/" + this.selected_trip, params)
-      //     .then((response) => {
-      //       console.log(params);
-      //       console.log("added event to saved trip", response);
-      //       this.add_to_trip_message = "Added to selected saved trip!";
-      //       this.add_to_trip_message = "Added to current trip!";
-      //       var section = document.getElementById("search_results");
-      //       section.scrollIntoView({ behavior: "smooth" });
-      //     })
-      //     .catch((error) => {
-      //       console.log(error.messages);
-      //     });
-      // } else {
-      axios
-        .post("/api/trip_events/new", params)
-        .then((response) => {
-          console.log(params);
-          console.log("adding this to trip_events", response);
-          // this.$router.push({ name: "Trip Events" });
-          this.add_to_trip_message = "Added to current trip!";
-          var section = document.getElementById("search_results");
-          section.scrollIntoView({ behavior: "smooth" });
-        })
-        .catch((error) => {
-          console.log(error.messages);
-        });
-      // }
+      if (this.selected_trip) {
+        axios
+          .patch("/api/saved_trips/" + this.selected_trip, params)
+          .then((response) => {
+            console.log(params);
+            console.log("adding this to saved_trip", response);
+            console.log(this.selected_trip);
+            this.add_to_trip_message = "Added to your trip!";
+            var section = document.getElementById("search_results");
+            section.scrollIntoView({ behavior: "smooth" });
+          })
+          .catch((error) => {
+            console.log(error.messages);
+          });
+      } else {
+        axios
+          .post("/api/trip_events/new", params)
+          .then((response) => {
+            console.log(params);
+            console.log("adding this to trip_events", response);
+            console.log(this.selected_trip);
+            this.add_to_trip_message = "Added to current trip!";
+            var section = document.getElementById("search_results");
+            section.scrollIntoView({ behavior: "smooth" });
+          })
+          .catch((error) => {
+            console.log(error.messages);
+          });
+      }
     },
     isLoggedIn: function () {
       if (localStorage.getItem("jwt")) {

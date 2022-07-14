@@ -170,7 +170,7 @@ export default {
         .delete("api/trip_events", params)
         .then((response) => {
           console.log("deleting all trip events", response);
-          this.$router.push({ name: "Saved Trips Index" });
+          window.location.reload();
         })
         .catch((error) => {
           console.log(error.messages);
