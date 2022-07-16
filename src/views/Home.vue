@@ -7,7 +7,7 @@
         </header>
         <h3>How does it work?</h3>
         <section class="tiles">
-          <article class="image fit">
+          <article class="image home">
             <span class="image">
               <img src="images/homepage.png" alt="" />
             </span>
@@ -62,11 +62,6 @@
                   <li>
                     <router-link to="/login">
                       <button class="button primary fit">Login</button>
-                    </router-link>
-                  </li>
-                  <li>
-                    <router-link to="/findPlaces">
-                      <button class="button primary fit">Find Places</button>
                     </router-link>
                   </li>
                 </ul>

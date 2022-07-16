@@ -370,9 +370,8 @@ sup {
 blockquote {
   border-left: solid 4px black;
   font-style: italic;
-  margin: 0;
-  padding: 0 0.5em 0;
-  font-size: x-large;
+  margin: auto;
+  font-size: 1.5vmax;
   /* background-color: #f7f7f7; */
   color: white;
   /* opacity: 0.7; */
@@ -1895,6 +1894,7 @@ hr.major {
 section.special,
 article.special {
   text-align: center;
+  justify-content: center;
 }
 
 header p {
@@ -2450,7 +2450,6 @@ input[type="radio"] + label:before {
 /* Image */
 
 .image {
-  border-radius: 4px;
   border: 0;
   display: inline-block;
   position: relative;
@@ -2462,12 +2461,12 @@ input[type="radio"] + label:before {
 }
 
 .image.left,
-.image.right {
+/* .image.right {
   max-width: 50%;
-}
+} */
 
 .image.left img,
-.image.right img {
+.image.home img {
   width: 100%;
 }
 
@@ -2477,10 +2476,11 @@ input[type="radio"] + label:before {
   top: 0.25em;
 }
 
-.image.right {
-  float: right;
-  padding: 0 0 1em 1.5em;
-  top: 0.25em;
+.image.home {
+  display: block;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .image.fit {
@@ -2489,6 +2489,8 @@ input[type="radio"] + label:before {
   width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
+  /* padding: 1.5em; */
+  /* justify-content: center; */
 }
 
 .image.fit img {
@@ -2775,8 +2777,13 @@ button:disabled,
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   position: relative;
-  margin: -2.5em 0 0 -2.5em;
+  /* margin: -2.5em 0 0 -2.5em; */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  justify-content: center;
 }
+
 
 .tiles article {
   -moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
@@ -2849,7 +2856,6 @@ button:disabled,
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
-  display: flex;
   -moz-flex-direction: column;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
