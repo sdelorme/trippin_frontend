@@ -1,4 +1,4 @@
-# Trippin -- Frontend
+# Trippin Frontend
 
 ## Table of Contents
 
