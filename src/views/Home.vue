@@ -5,6 +5,17 @@
         <header>
           <h1>Welcome to Trippin'</h1>
         </header>
+        <p>
+          <strong>
+            This app was built by
+            <a target="_blank" href="https://www.linkedin.com/in/seth-delorme/"><b class="alt-2">Seth Delorme</b></a>
+            on a Rails backend, Vuejs frontend, and the Google Places API. Seth loves food and is always recommending
+            places to friends. He built Trippin' to make that a little easier. The app allows you to plan a vacation
+            ("trip") itinerary, search for restaurants or attractions , and save a list of places that you would like to
+            share with others. Check out Seth's favorite Vermont breweries at the bottom of this page.
+          </strong>
+        </p>
+        <hr />
         <h3>How does it work?</h3>
         <section class="tiles">
           <article class="image home">

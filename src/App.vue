@@ -43,12 +43,16 @@
           <h2>Seth Delorme</h2>
           <ul class="icons">
             <li>
-              <a href="https://github.com/sdelorme" class="icon brands style2 fa-github">
+              <a target="_blank" href="https://github.com/sdelorme" class="icon brands style2 fa-github">
                 <span class="label">GitHub</span>
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/seth-delorme/" class="icon brands style2 fa-linkedin">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/seth-delorme/"
+                class="icon brands style2 fa-linkedin"
+              >
                 <span class="label">LinkedIn</span>
               </a>
             </li>
@@ -66,7 +70,7 @@
           <li>&copy; Trippin'. All rights reserved</li>
           <li>
             Design:
-            <a href="https://html5up.net/phantom">Adapted from HTML5 UP - "Phantom"</a>
+            <a target="_blank" href="https://html5up.net/phantom">Adapted from HTML5 UP - "Phantom"</a>
           </li>
         </ul>
       </div>
