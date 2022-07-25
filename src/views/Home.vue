@@ -27,21 +27,21 @@
                 <blockquote>
                   <ul class="actions fit stacked">
                     <li>
-                      <button class="button primary fit">
-                        <p class="fas fa-map-marker-alt"></p>
-                        My Saved Trips
+                      <button class="button secondary fit">
+                        <p class="fas fa-sign-in-alt"></p>
+                        Create an account and log in!
                       </button>
                     </li>
                     <li>
-                      <button class="button primary fit">
-                        <p class="fas fa-map-marker-alt"></p>
-                        My Saved Trips
+                      <button class="button secondary fit">
+                        <p class="fas fa-solid fa-globe-europe"></p>
+                        Head over to the "Find Places" page.
                       </button>
                     </li>
                     <li>
-                      <button @click="scrollToPresets()"  class="button primary fit">
+                      <button @click="scrollToPresets()" class="button secondary fit">
                         <p class="fas fa-map-marker-alt"></p>
-                        My Saved Trips
+                        Start finding places for your trip! 
                       </button>
                     </li>
                   </ul>
