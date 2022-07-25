@@ -15,6 +15,7 @@ public/images/Trippin1.png
  -->
 
 [Nearby Places Search Page](public/images/Trippin1.png?raw=true "Search Nearby Places")
+
 [Place Info](public/images/Trippin2.png?raw=true "Place Information")
 
     1. Link to a 'live demo.'
