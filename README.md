@@ -14,7 +14,7 @@
 public/images/Trippin1.png
  -->
 
-<a src="/public/images/Trippin1.png"target="\_blank">Nearby Places Search Page</a>
+<a href="/public/images/Trippin1.png" target="\_blank">Nearby Places Search Page</a>
 
 [Nearby Places Search Page](/public/images/Trippin1.png?raw=true "Search Nearby Places")
 
