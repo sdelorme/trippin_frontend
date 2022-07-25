@@ -14,20 +14,26 @@
 public/images/Trippin1.png
  -->
 
-<a target="_blank" href="/public/images/Trippin1.png">Nearby Places Search Page</a>
-
 [Nearby Places Search Page](/public/images/Trippin1.png?raw=true "Search Nearby Places")
 
 [Place Info](/public/images/Trippin2.png?raw=true "Place Information")
 
     1. Link to a 'live demo.'
-    2. Describe your overall experience in a couple of sentences.
-    3. List a few specific technical things that you learned or improved on.
-    4. Share any other tips or guidance for others attempting this or something similar.
+    2. I love food and am always recommending places to friends. I built Trippin' to make that a little easier. The app allows you to plan a vacation ("trip") itinerary, search for restaurants or attractions , and save a list of places that you would like to share with others.
+
+    3. This was my first full project built with an external api -- in this case the Google Places API. It was a great way to gain experience with large objects -- and specifically how to handle data with so many null values. A couple of fun/small learning experiences:
+    --> Next page tokens
+    --> Datetime binding
+    --> Serialization of objects to JSON
+
+    4. If I were to start all over I would certainly put more emphasis on wireframing and creating an entire db schema, including how to handle missing data.
 
 ### Built With
 
-<!-- TODO: List any MAJOR libraries/frameworks (e.g. React, Tailwind) with links to their homepages. -->
+1. [Backend: Ruby on Rails](https://rubyonrails.org/)
+2. [Frontend: Vuejs](https://vuejs.org/)
+3. [Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview)
+4. [Adapted HTML5 Template: Phantom](https://html5up.net/phantom)
 
 ## Features
 
