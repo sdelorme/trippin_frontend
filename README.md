@@ -39,9 +39,17 @@ public/images/Trippin1.png
 
 <!-- TODO: List what specific 'user problems' that this application solves. -->
 
+    --> Users can sign up and log in to an account.
+    --> Trippin allows users to search for, and gather information on, any place (attraction, restaurant, business) anywhere in the world. The app will return up to 40 of the closest places based on your search and display their ratings etc..
+    --> Trippin allows users to plan itineraries by adding these places to a planned trip. Users can then organize their itinerary chronologically to keep track of their trip.
+    --> Users can save "trips" or lists of places to their account for future reference -- EX./ "Best Breweries in Boston".
+
 ## Contact
 
 <!-- TODO: Include icons and links to your RELEVANT, PROFESSIONAL 'DEV-ORIENTED' social media. LinkedIn and dev.to are minimum. -->
+
+<a target="_blank" href="https://github.com/sdelorme" class="icon brands style2 fa-github"></a>
+<a target="_blank" href="https://www.linkedin.com/in/seth-delorme/" class="icon brands style2 fa-linkedin"></a>
 
 ## Acknowledgements
 
