@@ -10,15 +10,11 @@
 
 ## Overview
 
-<!-- TODO: Add a screenshot of the live project.
-public/images/Trippin1.png
- -->
-
 [Nearby Places Search Page](/public/images/Trippin1.png?raw=true "Search Nearby Places")
 
 [Place Info](/public/images/Trippin2.png?raw=true "Place Information")
 
-    1. Link to a 'live demo.'
+    1. Live site: (http://trippin-delorme.herokuapp.com/)
     2. I love food and am always recommending places to friends. I built Trippin' to make that a little easier. The app allows you to plan a vacation ("trip") itinerary, search for restaurants or attractions , and save a list of places that you would like to share with others.
 
     3. This was my first full project built with an external api -- in this case the Google Places API. It was a great way to gain experience with large objects -- and specifically how to handle data with so many null values. A couple of fun/small learning experiences:
@@ -53,7 +49,3 @@ public/images/Trippin1.png
 [Portfolio](https://sdelorme.github.io/)
 
 [Email](mailto:delorme.s.m@gmail.com)
-
-## Acknowledgements
-
-<!-- TODO: List any blog posts, tutorials or plugins that you may have used to complete the project. Only list those that had a significant impact. Obviously, we all 'Google' stuff while working on our things, but maybe something in particular stood out as a 'major contributor' to your skill set for this project. -->
