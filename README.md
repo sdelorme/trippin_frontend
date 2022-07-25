@@ -14,15 +14,15 @@
 
 [Place Info](/public/images/Trippin2.png?raw=true "Place Information")
 
-    1. Live site: (http://trippin-delorme.herokuapp.com/)
-    2. I love food and am always recommending places to friends. I built Trippin' to make that a little easier. The app allows you to plan a vacation ("trip") itinerary, search for restaurants or attractions , and save a list of places that you would like to share with others.
+1. Live site [here](http://trippin-delorme.herokuapp.com/)
+2. I love food and am always recommending places to friends. I built Trippin' to make that a little easier. The app allows you to plan a vacation ("trip") itinerary, search for restaurants or attractions , and save a list of places that you would like to share with others.
 
-    3. This was my first full project built with an external api -- in this case the Google Places API. It was a great way to gain experience with large objects -- and specifically how to handle data with so many null values. A couple of fun/small learning experiences:
-    --> Next page tokens
-    --> Datetime binding
-    --> Serialization of objects to JSON
+3. This was my first full project built with an external api -- in this case the Google Places API. It was a great way to gain experience with large objects -- and specifically how to handle data with so many null values. A couple of fun/small learning experiences:
+   --> Next page tokens
+   --> Datetime binding
+   --> Serialization of objects to JSON
 
-    4. If I were to start all over I would certainly put more emphasis on wireframing and creating an entire db schema, including how to handle missing data.
+4. If I were to start all over I would certainly put more emphasis on wireframing and creating an entire db schema, including how to handle missing data.
 
 ### Built With
 
