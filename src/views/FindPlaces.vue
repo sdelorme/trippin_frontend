@@ -40,7 +40,7 @@
         </form>
         <div>
           <p>
-            <b class="alt">{{ search_message }}</b>
+            <b class="alt-2">{{ search_message }}</b>
           </p>
         </div>
 

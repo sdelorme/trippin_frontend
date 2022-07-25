@@ -23,12 +23,28 @@
               <img src="images/homepage.png" alt="" />
             </span>
             <a>
-              <div @click="scrollToPresets()" class="content">
+              <div class="content">
                 <blockquote>
-                  Trippin' is an app created to help plan itineraries when traveling or a tool to find the best
-                  attractions within your own city! Built with Ruby on Rails and VueJs and seamlessly integrated with
-                  the Google Places API. The app features preset "trip attractions" and the ability to search for new
-                  places wherever you (and Google) are going! You can also save your own "trips" for later. Enjoy!
+                  <ul class="actions fit stacked">
+                    <li>
+                      <button class="button primary fit">
+                        <p class="fas fa-map-marker-alt"></p>
+                        My Saved Trips
+                      </button>
+                    </li>
+                    <li>
+                      <button class="button primary fit">
+                        <p class="fas fa-map-marker-alt"></p>
+                        My Saved Trips
+                      </button>
+                    </li>
+                    <li>
+                      <button @click="scrollToPresets()"  class="button primary fit">
+                        <p class="fas fa-map-marker-alt"></p>
+                        My Saved Trips
+                      </button>
+                    </li>
+                  </ul>
                 </blockquote>
               </div>
             </a>
