@@ -14,7 +14,8 @@
 public/images/Trippin1.png
  -->
 
-[Alt text](public/images/Trippin1.png?raw=true "Optional Title")
+[Nearby Places Search Page](public/images/Trippin1.png?raw=true "Search Nearby Places")
+[Place Info](public/images/Trippin2.png?raw=true "Place Information")
 
     1. Link to a 'live demo.'
     2. Describe your overall experience in a couple of sentences.
