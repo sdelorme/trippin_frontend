@@ -28,20 +28,20 @@
                   <ul class="actions fit stacked">
                     <li>
                       <button class="button secondary fit">
-                        <p class="fas fa-sign-in-alt"></p>
+                        <p class="fas fa-sign-in-alt fa-2x"></p>
                         Create an account and log in!
                       </button>
                     </li>
                     <li>
                       <button class="button secondary fit">
-                        <p class="fas fa-solid fa-globe-europe"></p>
+                        <p class="fas fa-solid fa-globe-europe fa-2x"></p>
                         Head over to the "Find Places" page.
                       </button>
                     </li>
                     <li>
                       <button @click="scrollToPresets()" class="button secondary fit">
-                        <p class="fas fa-map-marker-alt"></p>
-                        Start finding places for your trip! 
+                        <p class="fas fa-map-marker-alt fa-2x"></p>
+                        Start finding places for your trip!
                       </button>
                     </li>
                   </ul>
