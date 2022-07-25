@@ -175,6 +175,11 @@
                               <button class="secondary">Take me to my current trip!</button>
                             </router-link>
                           </li>
+                          <li class="secondary">
+                            <router-link to="/saved_trips">
+                              <button class="primary">Take me to my saved trips!</button>
+                            </router-link>
+                          </li>
                         </ul>
                       </div>
                     </div>
