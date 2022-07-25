@@ -48,8 +48,9 @@ public/images/Trippin1.png
 
 <!-- TODO: Include icons and links to your RELEVANT, PROFESSIONAL 'DEV-ORIENTED' social media. LinkedIn and dev.to are minimum. -->
 
-<a target="_blank" href="https://github.com/sdelorme" class="icon brands style2 fa-github"></a>
-<a target="_blank" href="https://www.linkedin.com/in/seth-delorme/" class="icon brands style2 fa-linkedin"></a>
+[LinkedIn](https://www.linkedin.com/in/seth-delorme/)
+[Portfolio](https://sdelorme.github.io/)
+[Email](delorme.s.m@gmail.com)
 
 ## Acknowledgements
 
